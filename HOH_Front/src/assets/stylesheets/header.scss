@@ -1,0 +1,305 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-ExtraLight";
+  src: local("MuliExtraLight"),
+    url(../../assets/fonts/muli/Muli-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"),
+    url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("RobotoBold"),
+    url(../../assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("RobotoLight"),
+    url(../../assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("QuicksandLight"),
+    url(../../assets/fonts/Quicksand/Quicksand-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Peace Sans";
+  src: local("PeaceSans"),
+    url(../../assets/fonts/peace_sans/PeaceSansWebfont.ttf) format("truetype");
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  // border: 10px solid green;
+  overflow: hidden;
+  margin: 0 !important;
+  //
+  .logo {
+    display: none;
+  }
+  .facebookLink {
+    display: none;
+  }
+  .imgHeader {
+    margin: 0 !important;
+    opacity: rgba(0, 0, 0, 0.7);
+    // height: 568px;
+    // width: 300px;
+    // position: relative;
+    // margin: 0;
+    // padding: 0%;
+    // z-index: 2;
+    // z-index: 2;
+    // display: contents;
+    // border: 3px violet solid;
+    height: 100vh;
+    box-sizing: border-box;
+    // overflow: hidden;
+    display: block;
+    filter: saturate(5%) contrast(125%);
+  }
+
+  article {
+    font-size: 16px;
+    position: absolute;
+    top: 48%;
+    right: 20%;
+    width: 80%;
+    height: 45%;
+
+    z-index: 4;
+    border: solid 0px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+
+    p:nth-child(2) {
+      text-align: left;
+    }
+    .tagline {
+      padding: 6%;
+      display: none;
+    }
+    a {
+      background-color: rgba(255, 255, 255, 0.76);
+      align-items: left;
+      font-family: "Muli-ExtraLight";
+      text-decoration: none;
+    }
+    .enSavoirPlus {
+      color: #d99827;
+      font-family: "Muli";
+      font-size: 18px;
+      background-color: transparent;
+      em {
+        font-family: "Muli-Bold";
+        color: #d99827;
+        font-size: 16px;
+      }
+    }
+  }
+  // // PIXEL 2XL
+  @media (min-width: 280px), (min-width: 411px) {
+    p {
+      font-size: 15px !important;
+    }
+    .facebookLink {
+      display: none;
+    }
+
+    .tagline {
+      display: flex !important;
+      color: white !important;
+      flex-direction: column !important;
+      font-family: "Muli-ExtraLight" !important;
+      text-align: left;
+      font-size: 16px !important;
+      padding-left: 6% !important;
+
+      .titleTagline {
+        font-size: 22px !important;
+        color: #d99827 !important;
+        font-family: "Muli-Bold" !important;
+      }
+    }
+    .taglineDesktop {
+      display: none !important;
+      .titleTagline {
+        display: none !important;
+      }
+    }
+  }
+  // IPAD
+  @media (min-width: 768px) {
+    article {
+      .titleTagline {
+        font-size: 24px !important;
+      }
+      .tagline {
+        display: flex !important;
+        color: white !important;
+        flex-direction: column !important;
+        font-family: "Muli-ExtraLight" !important;
+        text-align: left;
+        font-size: 24px !important;
+        padding-left: 6% !important;
+      }
+      .titleTagline {
+        font-size: 37px !important;
+        font-family: "Muli-Bold" !important;
+      }
+      .enSavoirPlus {
+        font-size: 28px !important;
+        background-color: transparent;
+        em {
+          color: #d99827;
+          font-size: 25px !important;
+        }
+      }
+    }
+  }
+  /////////////// VERSIONS DESKTOP \\\\\\\\\\\\\\\
+  // IPAD PRO 1024PX
+  @media only screen and (min-device-width: 1024px) {
+    display: flex !important;
+    flex-direction: column !important;
+    // position:static;
+    // height: 100vh !important;
+
+    .HomepageImage {
+      margin-right: 238px;
+      margin-top: -202px;
+
+      .facebookLegend {
+        margin-right: 820px;
+        color: gray;
+        margin-top: -25px;
+      }
+    }
+
+    article {
+      padding-top: 10% !important;
+      background: none !important;
+      // border: 1px solid #ffc136 !important;
+
+      width: 41vw;
+      height: 100vh;
+      top: 0;
+      right: 58%;
+      font-size: 16px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      /////// LOGO + SLOGAN
+
+      .tagline {
+        color: transparent !important;
+      }
+
+      .logo {
+        display: flex !important;
+
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+          max-width: 18% !important;
+        }
+        p {
+          color: black !important;
+          font-family: "Roboto-Light" !important;
+          // text-shadow: #a2c2df -1px -1px !important;
+          z-index: 4;
+          font-size: 11px !important;
+          text-align: center;
+          justify-content: center;
+          padding: 1%;
+          width: 95px;
+        }
+      }
+      ////// TAGLINE + TITLE DESKTOP
+      .taglineDesktop {
+        display: block !important;
+        font-family: "Roboto-Light";
+        margin-bottom: 2%;
+        text-align: left !important;
+        font-size: 19px !important;
+        padding: 4%;
+        color: black !important;
+        width: 59%;
+        margin-left: 37px;
+        span {
+          font-family: "Peace Sans";
+          font-size: 2.4rem;
+        }
+      }
+      .taglineDesktop .titleTaglineDesktop {
+        display: none !important;
+      }
+
+      .titleTagline {
+        display: none !important;
+      }
+      .enSavoirPlus {
+        font-size: 24px !important;
+        margin-top: 10% !important;
+        border: 1px solid black !important;
+        transform: translateX(4%);
+        // margin: 0% 8%;
+        margin: 0% 23%;
+        transition: all 0.3s;
+        border-radius: 5px;
+      }
+    }
+
+    section {
+      transform: scaleX(-1);
+      opacity: rgba(0, 0, 0, 0.7);
+      filter: saturate(5%) contrast(125%);
+      box-sizing: border-box;
+      background-size: cover;
+      background-image: url("../images/Header-tablette-pro.jpg") !important;
+      // border: 2px solid #ba0ee3 !important;
+      background-repeat: no-repeat;
+      justify-content: flex-end !important;
+      align-items: flex-end !important;
+      width: 60vw;
+      height: 124vh;
+      margin: 0;
+      position: relative;
+      left: 24%;
+      box-sizing: border-box;
+      .facebookLink {
+        z-index: 2;
+        text-transform: capitalize !important;
+        font-size: 29px !important;
+        text-decoration: none !important;
+        display: flex !important;
+        justify-content: left;
+        transform: scaleX(-1);
+        margin: 5% 102% 5% 11% !important;
+        img {
+          margin-right: 37px;
+          height: 22px;
+          margin-top: -30px;
+        }
+      }
+      .imgHeader {
+        display: none;
+      }
+    }
+  }
+}

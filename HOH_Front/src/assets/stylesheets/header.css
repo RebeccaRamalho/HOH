@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Muli-ExtraLight";
+  src: local("MuliExtraLight"), url(../../assets/fonts/muli/Muli-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"), url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("RobotoBold"), url(../../assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("RobotoLight"), url(../../assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("QuicksandLight"), url(../../assets/fonts/Quicksand/Quicksand-Light.ttf) format("truetype");
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+header .logo {
+  display: none;
+}
+
+header .facebookLink {
+  display: none;
+}
+
+header .imgHeader {
+  margin: 0 !important;
+  opacity: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  -webkit-filter: saturate(5%) contrast(125%);
+          filter: saturate(5%) contrast(125%);
+}
+
+header article {
+  font-size: 16px;
+  position: absolute;
+  top: 48%;
+  right: 20%;
+  width: 80%;
+  height: 45%;
+  z-index: 4;
+  border: solid 0px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+header article p:nth-child(2) {
+  text-align: left;
+}
+
+header article .tagline {
+  padding: 6%;
+  display: none;
+}
+
+header article a {
+  background-color: rgba(255, 255, 255, 0.76);
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  font-family: "Muli-ExtraLight";
+  text-decoration: none;
+}
+
+header article .enSavoirPlus {
+  color: #d99827;
+  font-family: "Muli";
+  font-size: 18px;
+  background-color: transparent;
+}
+
+header article .enSavoirPlus em {
+  font-family: "Muli-Bold";
+  color: #d99827;
+  font-size: 16px;
+}
+
+@media (min-width: 280px), (min-width: 411px) {
+  header p {
+    font-size: 15px !important;
+  }
+  header .tagline {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    color: white !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    font-family: "Muli-ExtraLight" !important;
+    text-align: left;
+    font-size: 16px !important;
+    padding-left: 6% !important;
+  }
+  header .tagline .titleTagline {
+    font-size: 22px !important;
+    color: #d99827 !important;
+    font-family: "Muli-Bold" !important;
+  }
+  header .taglineDesktop {
+    display: none !important;
+  }
+  header .taglineDesktop .titleTagline {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  header article .titleTagline {
+    font-size: 24px !important;
+  }
+  header article .tagline {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    color: white !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    font-family: "Muli-ExtraLight" !important;
+    text-align: left;
+    font-size: 24px !important;
+    padding-left: 6% !important;
+  }
+  header article .titleTagline {
+    font-size: 37px !important;
+    font-family: "Muli-Bold" !important;
+  }
+  header article .enSavoirPlus {
+    font-size: 28px !important;
+    background-color: transparent;
+  }
+  header article .enSavoirPlus em {
+    color: #d99827;
+    font-size: 25px !important;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  header {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  header article {
+    padding-top: 10% !important;
+    background: none !important;
+    width: 41vw;
+    height: 100vh;
+    top: 0;
+    right: 58%;
+    font-size: 16px !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  header article .logo {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header article .logo img {
+    max-width: 18% !important;
+  }
+  header article .logo p {
+    color: #2b5d99 !important;
+    font-family: "Roboto-Light" !important;
+    text-shadow: #a2c2df -1px -1px !important;
+    z-index: 4;
+    font-size: 15px !important;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1%;
+  }
+  header article .taglineDesktop {
+    display: block !important;
+    font-family: "Roboto-Light";
+    margin-bottom: 2%;
+    text-align: left !important;
+    font-size: 25px !important;
+    padding: 4%;
+    color: black !important;
+  }
+  header article .taglineDesktop .titleTaglineDesktop {
+    display: none !important;
+  }
+  header article .titleTagline {
+    display: none !important;
+  }
+  header article .enSavoirPlus {
+    font-size: 24px !important;
+    margin-top: 10% !important;
+    border: 1px solid black !important;
+    -webkit-transform: translateX(4%);
+            transform: translateX(4%);
+    margin: 0% 23%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border-radius: 5px;
+  }
+  header section {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+    opacity: rgba(0, 0, 0, 0.7);
+    -webkit-filter: saturate(5%) contrast(125%);
+            filter: saturate(5%) contrast(125%);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-size: cover;
+    background-image: url("../images/Header-tablette-pro.jpg") !important;
+    background-repeat: no-repeat;
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+    width: 63vw;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    left: 24%;
+    box-sizing: border-box;
+  }
+  header section .facebookLink {
+    font-family: "Roboto-Bold" !important;
+    -webkit-writing-mode: vertical-rl !important;
+        -ms-writing-mode: tb-rl !important;
+            writing-mode: vertical-rl !important;
+    color: white !important;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    z-index: 2;
+    text-transform: capitalize !important;
+    font-size: 29px !important;
+    text-decoration: none !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+    margin: 5% 0% 0% 11% !important;
+  }
+  header section .imgHeader {
+    display: none;
+  }
+}
+/*# sourceMappingURL=header.css.map */

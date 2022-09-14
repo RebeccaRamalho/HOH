@@ -1,0 +1,10 @@
+
+POST http://localhost:4000/api/adminRegister/
+Content-Type: application/json
+{
+
+   "user_name": "Amélia",
+   "email": "kldlsdddddllfnxxkjk@dkkgmail.com",
+   "password": "ddddddM0dMd"
+
+}

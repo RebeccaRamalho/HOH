@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"),
+    url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: local("QuicksandRegular"),
+    url(../../assets/fonts/Quicksand/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("QuicksandLight"),
+    url(../../assets/fonts/Quicksand/Quicksand-Light.ttf);
+}
+@font-face {
+  font-family: "Peace Sans";
+  src: local("PeaceSans"),
+    url(../../assets/fonts/peace_sans/PeaceSansWebfont.ttf) format("truetype");
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .articleDetailsContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+}

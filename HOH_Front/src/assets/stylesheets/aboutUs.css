@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Muli-ExtraLight";
+  src: local("MuliExtraLight"), url(../../assets/fonts/muli/Muli-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"), url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("RobotoBold"), url(../../assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("RobotoLight"), url(../../assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("QuicksandLight"), url(../../assets/fonts/Quicksand/Quicksand-Light.ttf) format("truetype");
+}
+
+.aboutUsContainer {
+  font-size: 62.5% !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutUsContainer * {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+}
+
+.aboutUsContainer h1 {
+  font-family: "Roboto-Bold";
+  font-size: 2.6em;
+  margin-right: 154px;
+}
+
+.aboutUsContainer h2 {
+  font-family: "Roboto-Bold";
+  font-size: 2em;
+  margin-right: 154px;
+  color: white;
+}
+
+.aboutUsContainer img {
+  -webkit-filter: saturate(5%) contrast(125%);
+          filter: saturate(5%) contrast(125%);
+  height: 10%;
+  width: 84%;
+}
+
+.aboutUsContainer .ligne {
+  height: 7px;
+  background-color: #ff7e92;
+  width: 26%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: 72px;
+}
+
+.aboutUsContainer p {
+  font-family: "Quicksand-Light";
+  font-size: 2em;
+  width: 32%;
+}
+
+.aboutUsContainer .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  margin-top: 114px;
+}
+
+.aboutUsContainer .actions li {
+  font-family: "Quicksand-Light";
+  font-size: 1.5em;
+  width: 35%;
+  margin-top: 12px;
+  color: white;
+}
+
+.aboutUsContainer .actions li span {
+  font-weight: bolder;
+  font-size: 1em;
+}
+/*# sourceMappingURL=aboutUs.css.map */

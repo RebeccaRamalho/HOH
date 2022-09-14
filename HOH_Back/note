@@ -1,0 +1,35 @@
+1-vérifier qu'un user existe
+2-Mail =>
+    -Minimum trois lettres 
+    -limiter le nombre de caractère, 
+    -pas de caractère _-. après le nom du prestataire de mail (gmail, yahoo etc...)
+    -Il n'est pas autorisé de créer une adresse dont le préfixe finit par un point, exemple "alain.dupont.@orange.fr".
+    -Il n'est pas autorisé de créer une adresse avec plusieurs points consécutifs au milieu, exemple "toto...titi@orange.fr" est une adresse incorrecte.  
+    -Il n'est pas autorisé de créer une adresse dont le préfixe débute par un point, ni débutant ou finissant par un tiret (-).
+    -1er tentative => /^((\w+[_.-]{0,1}[a-zA-Z0-9]+)+([_.-]{0,1}[a-zA-Z0-9]+)+)[@]{1}(([a-zA-Z0-9]+[_.-]{0,1}[a-zA-Z0-9]+)+([_.-]{0,1}[a-zA-Z0-9]+)+)[.]{1}[a-z]{2,6}$/gm
+
+    -Exemple => 
+     Good:
+     khkk@khkk.com
+     kanuRebecca0@gmail.com
+     KANU_R0kkl_ijjk_h@gmail.com
+     k_ra_Rebecca@gmail.com
+     k_ra_R@gmail.com
+     k_r_R@gmail.com
+     12_312_3@gmail.com
+     A.kAA_KKK_AKKK_A@gma_il.com
+     A1.k_K_n-2K_p_A2@gma_il.com
+     12_3@impots.finances_gouv.com
+
+     Not good:
+     12_3@_gmail.com
+     kanu..rebecca@gmail.com
+     kanu._rebecca@gmail.com
+     kanurebecca.@gmail.com
+     123@gmail_.com
+     alain.dupont.@orange.fr
+     i._toto...titi@orange.fr
+     d@dkkgmail.com_
+
+
+3-Votre mot de passe doit se composer de 4 types de caractères différents : majuscules, minuscules, chiffres, et signes de ponctuation ou caractères spéciaux (€, #...).

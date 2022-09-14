@@ -1,0 +1,27 @@
+
+h1{
+    text-align: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+    
+    // transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background-color: grey;
+    padding:40px;
+    border-radius: 15px;
+    border:1px solid #fff;
+    
+
+    .fiels{
+        // flex-direction: column;
+        
+       
+    }
+
+}

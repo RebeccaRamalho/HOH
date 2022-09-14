@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "Muli-Light";
+  src: local("MuliLight"), url(../../assets/fonts/muli/Muli-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"), url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: local("BebasNeueRegular"), url(../../assets/fonts/bebas_neue/BebasNeue-Regular.ttf) format("truetype");
+}
+
+.BurgerLink {
+  font-size: 62.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 10;
+}
+
+.BurgerLink .burgerMenu {
+  margin: 10px;
+}
+
+.BurgerLink .burgerMenu div {
+  min-height: 2px;
+  min-width: 23px;
+  border-radius: 2px;
+  background-color: black;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.BurgerLink .Links {
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.BurgerLink .Links a {
+  font-family: "Muli-Light";
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+}
+
+.BurgerLink .contacts a {
+  font-family: "Muli-Light";
+  font-size: 22px;
+}
+
+@media (min-width: 540px) {
+  .BurgerLink .Links {
+    color: black !important;
+    border: 3px solid blue;
+    z-index: 3 !important;
+    top: 3% !important;
+    display: none !important;
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  .BurgerLink .Links a {
+    font-family: "Muli-Light";
+    font-size: 16px !important;
+    color: black !important;
+  }
+  .BurgerLink .Links li {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .BurgerLink {
+    left: 50%;
+  }
+  .BurgerLink .burgerMenu {
+    display: none;
+  }
+  .BurgerLink ul:nth-child(1) {
+    display: none;
+  }
+  .BurgerLink .Links {
+    color: black !important;
+    border: 3px solid blue;
+    z-index: 3 !important;
+    top: 3% !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+  }
+  .BurgerLink .Links a {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    font-family: "Muli-Light";
+    font-size: 16px !important;
+    color: black !important;
+  }
+  .BurgerLink .Links li {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    color: black;
+    display: flex !important;
+    color: black !important;
+    z-index: 8;
+  }
+  .BurgerLink .Links .desktop {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    color: black !important;
+    z-index: 8;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-device-width: 1024px) {
+  .BurgerLink .Links {
+    visibility: visible !important;
+  }
+}
+/*# sourceMappingURL=nav.css.map */
