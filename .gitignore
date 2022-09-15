@@ -38,13 +38,7 @@ bower_components
 build/Release
 
 # Dependency directories
-HOH_Back/node_modules/
-HOH_Front/node_modules/
-HOH_Back/build/
-HOH_Front/build/
-HOH_Back/.env
-HOH_Front/.env
-
+node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
