@@ -1,6 +1,7 @@
 import ApiError from "../../helpers/error";
 import { IMailerService } from "../../libs/mailer";
 import { User } from "./entity";
+import { user } from "../../helpers/types/user.types";
 import {
   IUserService,
   IUserRepository,
@@ -20,7 +21,7 @@ export default class UserService implements IUserService {
     return users;
   }
 
-  async register(userData: User) {
+  async register(userData: User | user) {
     //I_Vérification de l'existance de l'utilisateur dans la DB
     const passwordRegex =
       /^(?=.{8,24})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!#$%&?_.*^=+/&~#'`{"$£µ;(]).*$/;
@@ -60,12 +61,14 @@ export default class UserService implements IUserService {
 
   async login(userData: User) {
     if (!userData || !userData.password)
-      throw new ApiError(400, "Veuillez-renseignez votre email et/ou mot de passe");
+      throw new ApiError(
+        400,
+        "Veuillez-renseignez votre email et/ou mot de passe"
+      );
 
     const user = await this.userRepo.findByEMail(userData);
 
-    if (!user)
-      throw new ApiError(500, "Email inconnu");
+    if (!user) throw new ApiError(500, "Email inconnu");
 
     const passwordMatch = await this.userRepo.compareHash(
       userData.password,
@@ -74,8 +77,7 @@ export default class UserService implements IUserService {
     // if (err) {
     //throw new ApiError(500, "Error");
     // }
-    if (!passwordMatch)
-      throw new ApiError(401, "Mot de passe inconnu.");
+    if (!passwordMatch) throw new ApiError(401, "Mot de passe inconnu.");
 
     return user;
   }
