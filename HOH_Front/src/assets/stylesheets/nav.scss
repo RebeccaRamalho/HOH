@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "Muli-Light";
+  src: local("MuliLight"),
+    url(../../assets/fonts/muli/Muli-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"),
+    url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+.BurgerLink {
+  font-size: 62.5%;
+  display: flex;
+  position: static;
+  box-sizing: border-box;
+  justify-content: space-between;
+  // align-items: flex-end;
+  z-index: 10;
+  top: 10px; //AJOUTER
+
+  .burgerMenu {
+    margin: 10px;
+
+    div {
+      min-height: 2px;
+      min-width: 23px;
+      border-radius: 2px;
+      background-color: black;
+      margin-top: 3px;
+      cursor: pointer;
+    }
+  }
+  .Links {
+    transition: all 0.8s ease-out;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    a {
+      font-family: "Muli-Light";
+      text-decoration: none;
+      color: black;
+      font-size: 22px;
+      // display:none;
+    }
+  }
+  .contacts a {
+    font-family: "Muli-Light";
+    font-size: 22px;
+  }
+
+  // SURFACE DUO
+  @media (min-width: 540px) {
+    .Brg {
+      margin-left: "220px";
+    }
+    .Links {
+      color: rgb(0, 0, 0) !important;
+      // border: 3px solid blue;
+      z-index: 3 !important;
+      // right: 100% !important;
+      top: 3% !important;
+      display: none !important;
+      justify-content: flex-end !important;
+      align-items: flex-end !important;
+      a {
+        // display: flex !important;
+        font-family: "Muli-Light";
+        font-size: 16px !important;
+        // color: black !important;
+        // display:none;
+      }
+      li {
+        display: flex !important;
+      }
+    }
+  }
+  // IPAD
+  @media (min-width: 768px) {
+    left: 50%;
+    
+
+    .burgerMenu {
+      display: none;
+    }
+    ul:nth-child(1) {
+      display: none;
+    }
+    .Links {
+      color: rgb(0, 0, 0) !important;
+      // border: 3px solid blue;
+      z-index: 3 !important;
+      // right: 100% !important;
+      top: 3% !important;
+
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end !important;
+      align-items: flex-end !important;
+      a {
+        display: flex !important;
+        font-family: "Muli-Light";
+        font-size: 21px !important; //MODIFIER
+        // color: black !important;
+
+        // margin-right: -5px;
+        margin-right: 49px;
+        padding-left: 18px;
+      }
+
+      li {
+        display: flex !important;
+        color: black;
+        display: flex !important;
+        color: black !important;
+        z-index: 8;
+      }
+
+      .desktop {
+        display: flex !important;
+        color: black !important;
+        z-index: 8;
+      }
+    }
+    /////////////// VERSIONS DESKTOP \\\\\\\\\\\\\\\
+    @media only screen and (min-device-width: 1024px) {
+      // .a1,.a3{
+      //   left: 60.9%!important;
+      // }
+      .contactTest {
+        padding-left: -1px;
+        padding-bottom: 1px;
+        font-size: 20px;
+      }
+      .Links {
+        visibility: visible !important;
+        // margin-left: 586px;
+        margin-left: 221px;
+      }
+      // .BurgerLink {
+
+      //   font-size: 62.5%;
+      //     display: flex;
+      //     position: fixed;
+      //     box-sizing: border-box;
+      //     justify-content: flex-end;
+      //     align-items: flex-end;
+      //     z-index: 10;
+      //     border: 2px solid blue;;
+
+      // }
+
+      // .Links {
+      //   color: rgb(0, 0, 0) !important;
+      //   border: 3px solid blue;
+      //   z-index: 3!important;
+      //   // right: 100% !important;
+      //   top: 3% !important;
+      //   display: flex !important;
+      //   justify-content: flex-end !important;
+      //   align-items: flex-end !important;
+      //   li {
+      //     display: flex !important;
+      //     a {
+      //       display: flex !important;
+      //       font-family: "Muli-Light";
+      //       font-size: 16px !important;
+      //       color: black !important;
+      //     }
+      //   }
+      // }
+    }
+  }
+}
