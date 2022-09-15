@@ -10,9 +10,8 @@ const options: ConnectionOptions = {
   password: config.db_password,
   database: config.db_name,
   logging: false,
-  synchronize: true, //creation du schéma de bdd à chaque lancement de l'app
+  synchronize: true,
   migrationsRun: false,
-  //AC
   entities: [__dirname + "/../../modules/**/entity.{js,ts}"],
   migrations: ["src/config/database/migration/*.ts"], //path du dossier de migration
 };

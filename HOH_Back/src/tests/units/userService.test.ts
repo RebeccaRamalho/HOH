@@ -222,6 +222,7 @@ describe("Admin service USE-CASE: ", () => {
         );
       }
     });
-    //   expect(typeof user.password).toBe("string");
+    //   addNew
+    //   email
   });
 });
