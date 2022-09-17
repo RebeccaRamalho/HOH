@@ -8,3 +8,16 @@ Content-Type: application/json
    "password": "ddddddM0dMd"
 
 }
+####
+POST http://localhost:4000/api/adminlogin
+Content-Type: application/json
+
+{
+
+   "user_name": "",
+   "email": "",
+   "password": ""
+
+}
+####
+OPTIONS  http://localhost:4000/api/adminlogin
