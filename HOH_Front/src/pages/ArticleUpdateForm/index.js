@@ -13,7 +13,6 @@ export class ArticleUpdateForm extends Component {
     this.state = {
       title: "",
       img: "",
-      tags: "",
       resume_article: "",
       content_article: "",
       author_article: "",
@@ -52,7 +51,6 @@ export class ArticleUpdateForm extends Component {
         articleId,
         this.state.title,
         this.state.img,
-        this.state.tags,
         this.state.resume_article,
         this.state.content_article,
         this.state.author_article,
@@ -97,16 +95,6 @@ export class ArticleUpdateForm extends Component {
               require
               onChange={this.handleChangeImage}
               // value={this.handleChangeImage}
-            />
-
-            <label htmlFor="tags">Tags</label>
-            <input
-              type="text"
-              id="tags"
-              name="tags"
-              required
-              onChange={this.handleChange}
-              value={this.state.tags}
             />
 
             <label htmlFor="resume_article">Résumé</label>

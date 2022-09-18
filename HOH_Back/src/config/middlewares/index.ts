@@ -16,7 +16,6 @@ const auth = new AuthMiddleware(jwtService);
 const logger = new Logger(winston);
 const csrf = csurf({ cookie: true });
 //AC
-const corsOptions = { origin: "http://localhost:3000", credentials: true };
 
 //export all custom middlewares
 export { auth, logger, csrf };
@@ -24,9 +23,13 @@ export { auth, logger, csrf };
 //export default api middlewares
 export default {
   urlencoded: express.urlencoded({ extended: false }),
-  json: express.json(),
+  json: express.json({ limit: "max" }),
   cookieParser: cookieParser(),
   apiLogger: morgan("combined", { stream: logger.stream }),
-  cors: cors(corsOptions),
+  cors: cors({
+    allowedHeaders: "Content-Type,Authorization",
+    origin: "http://localhost:3000",
+    credentials: true,
+  }),
   csrf,
 };

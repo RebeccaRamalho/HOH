@@ -2,29 +2,10 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { BrowserRouter as Link } from "react-router-dom";
 import { ArticleService } from "../../services";
+import App from "../../App";
+import { withCookies } from "react-cookie";
 
 import "../../assets/stylesheets/TestimonyForm.scss";
-
-// const initialState = {
-//   title: "",
-//   img: "", /////////////////////////////////// remettre à ""
-//   tags: "",
-//   resume_article: "",
-//   content_article: "",
-//   author_article: "",
-//   video: "",
-//   admin_id: "",
-//   error: null,
-//   file: null,
-//   base64URL: "",
-//   titleError: "",
-//   imgError: "",
-//   tagsError: "",
-//   resume_articleError: "",
-//   content_articleError: "",
-//   author_articleError: "",
-//   videoError: "",
-// };
 
 class ArticleForm extends React.Component {
   constructor(props) {
@@ -33,7 +14,6 @@ class ArticleForm extends React.Component {
     this.state = {
       title: "",
       img: "", /////////////////////////////////// remettre à ""
-      tags: "",
       resume_article: "",
       content_article: "",
       author_article: "",
@@ -44,18 +24,17 @@ class ArticleForm extends React.Component {
       base64URL: "",
       titleError: "",
       imgError: "",
-      tagsError: "",
       resume_articleError: "",
       content_articleError: "",
       author_articleError: "",
       videoError: "",
+      token: "",
     };
   }
   //form validator
   validate = () => {
     let titleError = "";
     let imgError = "";
-    let tagsError = "";
     let resume_articleError = "";
     let content_articleError = "";
     let author_articleError = "";
@@ -128,7 +107,6 @@ class ArticleForm extends React.Component {
       this.setState({
         title: "",
         img: "", /////////////////////////////////// remettre à ""
-        tags: "",
         resume_article: "",
         content_article: "",
         author_article: "",
@@ -139,7 +117,6 @@ class ArticleForm extends React.Component {
         base64URL: "",
         titleError: "",
         imgError: "",
-        tagsError: "",
         resume_articleError: "",
         content_articleError: "",
         author_articleError: "",
@@ -151,16 +128,17 @@ class ArticleForm extends React.Component {
       const data = await ArticleService.publishArticle(
         this.state.title,
         this.state.img,
-        this.state.tags,
         this.state.resume_article,
         this.state.content_article,
         this.state.author_article,
         this.state.video
       );
+      this.setState({
+        token: this.props.cookies.get("auth-cookie"),
+      });
+      localStorage.setItem("token", this.state.token);
 
       this.props.history.push("/articles/");
-
-      // localStorage.setItem("token", data.token);
     } catch (error) {
       this.setState({ error: error });
     }
@@ -206,21 +184,6 @@ class ArticleForm extends React.Component {
             {this.state.imgError ? (
               <div style={{ fontSize: 12, color: "red" }}>
                 {this.state.imgError}
-              </div>
-            ) : null}
-
-            <label htmlFor="tags">Tags</label>
-            <input
-              type="text"
-              id="tags"
-              name="tags"
-              required
-              onChange={this.handleChange}
-              // value={this.state.tags}
-            />
-            {this.state.tagsError ? (
-              <div style={{ fontSize: 12, color: "red" }}>
-                {this.state.tagsError}
               </div>
             ) : null}
 
@@ -294,4 +257,4 @@ class ArticleForm extends React.Component {
     );
   }
 }
-export default withRouter(ArticleForm);
+export default withCookies(ArticleForm);

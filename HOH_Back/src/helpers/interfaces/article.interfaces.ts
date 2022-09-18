@@ -2,12 +2,19 @@ import { Article } from "../../modules/Article/entity";
 import { article } from "../types/article.types";
 
 export interface IArticleService {
-    getAll():Promise<Article[]>
-    add(articleData:article): Promise<Article>
+  getOne(article_id: string): Promise<Article>;
+  getAll(): Promise<Article[]>;
+  add(articleData: Article | article): Promise<Article>;
+  delete(article_id: string): Promise<any>;
+  update(article_id: string, articleData: Article): Promise<any>;
+  getLastOne(article_id: string): Promise<Article>;
 }
 
-export interface IUserRepository {
-    findAll(): Promise<Article[]>
-    addNew(article: article): Promise<Article>
-    findByUser(email: string): Promise<Article | undefined>
+export interface IArticleRepository {
+  findOne(article_id: string): Promise<Article>;
+  findAll(): Promise<Article[]>;
+  addNew(articleEntity: any): Promise<any>;
+  deleteOne(article_id: string): Promise<any>;
+  modifyOne(article_id: string, articleData: Article): Promise<any>;
+  findLastOne(article_id: string): Promise<Article>;
 }
