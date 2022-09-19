@@ -59,8 +59,8 @@ export default class UserService implements IUserService {
     }
   }
 
-  async login(userData: User) {
-    if (!userData || !userData.password)
+  async login(userData: User | user) {
+    if (!userData.user_name || !userData.password || ! userData.email)
       throw new ApiError(
         400,
         "Veuillez-renseignez votre email et/ou mot de passe"
@@ -68,15 +68,12 @@ export default class UserService implements IUserService {
 
     const user = await this.userRepo.findByEMail(userData);
 
-    if (!user) throw new ApiError(500, "Email inconnu");
+    if (!user) throw new ApiError(400, "Email inconnu");
 
     const passwordMatch = await this.userRepo.compareHash(
       userData.password,
       user.password
     );
-    // if (err) {
-    //throw new ApiError(500, "Error");
-    // }
     if (!passwordMatch) throw new ApiError(401, "Mot de passe inconnu.");
 
     return user;
