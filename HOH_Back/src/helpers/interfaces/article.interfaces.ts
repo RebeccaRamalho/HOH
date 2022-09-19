@@ -8,6 +8,8 @@ export interface IArticleService {
   delete(article_id: string): Promise<any>;
   update(article_id: string, articleData: Article): Promise<any>;
   getLastOne(article_id: string): Promise<Article>;
+  getAllVisitorArticle(): Promise<Article[]>;
+  visitorGetOneArticle(article_id: string): Promise<Article>;
 }
 
 export interface IArticleRepository {
@@ -17,4 +19,6 @@ export interface IArticleRepository {
   deleteOne(article_id: string): Promise<any>;
   modifyOne(article_id: string, articleData: Article): Promise<any>;
   findLastOne(article_id: string): Promise<Article>;
+  findAllVisitorArticle(): Promise<Article[]>;
+  findOneVisitorArticle(article_id: string): Promise<Article>;
 }
