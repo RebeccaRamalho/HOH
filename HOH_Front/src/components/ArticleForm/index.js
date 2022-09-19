@@ -133,11 +133,11 @@ class ArticleForm extends React.Component {
         this.state.author_article,
         this.state.video
       );
-      this.setState({
-        token: this.props.cookies.get("auth-cookie"),
-      });
-      localStorage.setItem("token", this.state.token);
-
+      // this.setState({
+      //   token: this.props.cookies.get("auth-cookie"),
+      // });
+      // localStorage.setItem("token", this.state.token);
+      console.log("history", this.props);
       this.props.history.push("/articles/");
     } catch (error) {
       this.setState({ error: error });

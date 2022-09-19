@@ -26,9 +26,9 @@ Content-Type: application/json
 
 {
         "title": "Bonjour monsieur LE MOCHE",
-        "img": "/",
+        "img": "img.PNG",
         "resume_article": "resume",
-        "content_article": "ee",
+        "content_article": "",
         "author_article": "Maryse",
         "video": "kkkkk",
         "admin_id": 2
