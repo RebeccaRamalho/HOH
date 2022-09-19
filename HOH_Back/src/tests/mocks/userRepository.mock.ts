@@ -18,13 +18,16 @@ export default class UserRepositoryMock implements IUserRepository {
     return users[users.length - 1];
   }
 
+  //AR
   async findUser(user: user) {
     return users;
   }
 
   async findByEMail(userEntity: user) {
-    const results = users.filter((user) => user);
-    return results[0];
+    const user = new User();
+    user.email = userEntity.email;
+    const result = users.filter((user) => user.email);
+    return result[0];
   }
 
   async compareHash(password: string, hash: string): Promise<boolean> {

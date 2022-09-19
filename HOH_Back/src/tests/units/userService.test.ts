@@ -222,7 +222,55 @@ describe("Admin service USE-CASE: ", () => {
         );
       }
     });
-    //   addNew
-    //   email
+    //findByEmail
+    //addNew
+    //email mailer
+  });
+
+  describe("login admin use case:", () => {
+    it("Should throw an error if the user_name is empty ", async () => {
+      try {
+        await userService.login({
+          user_name: "",
+          email: "ameliakanu@jmail.com",
+          password: "kkkA.100000",
+        });
+      } catch (e: any) {
+        expect(e.statusCode).toBe(400);
+        expect(e.message).toBe(
+          "Veuillez-renseignez votre email et/ou mot de passe"
+        );
+      }
+    });
+    it("Should throw an error if the email is empty ", async () => {
+      try {
+        await userService.login({
+          user_name: "Amoulou",
+          email: "",
+          password: "kkkA.100000",
+        });
+      } catch (e: any) {
+        expect(e.statusCode).toBe(400);
+        expect(e.message).toBe(
+          "Veuillez-renseignez votre email et/ou mot de passe"
+        );
+      }
+    });
+    it("Should throw an error if the password is empty:", async () => {
+      try {
+        await userService.login({
+          user_name: "Amoulou",
+          email: "ameliakanu@jmail.com",
+          password: "",
+        });
+      } catch (e: any) {
+        expect(e.statusCode).toBe(400);
+        expect(e.message).toBe(
+          "Veuillez-renseignez votre email et/ou mot de passe"
+        );
+      }
+    });
+    //findByemail
+    //compareHash
   });
 });
