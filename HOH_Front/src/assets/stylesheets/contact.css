@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+
+.contact {
+  font-size: 62.5%;
+  min-width: 40%;
+  font-family: "Muli-ExtraLight";
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.contact * {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+}
+
+.contact ul {
+  width: 40%;
+}
+
+.contact ul li:nth-child(3) a {
+  font-weight: bold !important;
+}
+
+.contact ul a {
+  font-style: "Muli" !important;
+  font-size: 20px;
+  text-decoration: none;
+  color: #d99827;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .contact {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+    -webkit-box-ordinal-group: 2 !important;
+        -ms-flex-order: 1 !important;
+            order: 1 !important;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

@@ -20,8 +20,28 @@ export default class ArticleService implements IArticleService {
   }
 
   async add(articleData: Article | article) {
-    const newArticle = await this.articleRepo.addNew(articleData);
-    return newArticle;
+    const imgRegex = new RegExp(
+      "^[a-zA-Z0-9]+.{1}(png|PNG|jpg|JPG|jpeg|JPEG|gif|GIF|bpm|BPM)$",
+      "m"
+    );
+    //IMG
+    if (!imgRegex.test(articleData.img)) {
+      throw new ApiError(400, "L'image n'est pas au bon format.");
+    } else if (
+      articleData.author_article ||
+      articleData.content_article ||
+      articleData.resume_article ||
+      articleData.title
+    ) {
+      throw new ApiError(
+        400,
+        "Vous devez à minima remplir les champs auteur, contenu, résumé et titre"
+      );
+    } else {
+      const newArticle = await this.articleRepo.addNew(articleData);
+      // await this.mailerService.sendMail(userData);
+      return newArticle;
+    }
   }
 
   async getAll() {

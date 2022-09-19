@@ -1,0 +1,23 @@
+// 	//check username if empty
+// 	userValue === ''
+// 		? this.setErrors(this.state.user_name, 'username is required')
+// 		: this.setSuccess(this.state.user_name);
+// 	//check email if empty or invalid
+// 	emailValue === ''
+// 		? this.setErrors(this.state.email, 'email is required')
+// 		: !this.checkEmail(emailValue)
+// 		? this.setErrors(this.state.email, 'email is invalid!')
+// 		: this.setSuccess(this.state.email);
+// 	//check password if empty or less than 8
+// 	passwordValue === ''
+// 		? this.setErrors(this.state.password, 'password is required')
+// 		: !this.checkPassword(passwordValue)
+// 		? this.setErrors(this.state.password, 'password must be at least 8 characters')
+// 		: this.setSuccess(this.state.password);
+// 	//check confirm password if empty or not equal password
+// 	confirmPasswordValue === ''
+// 		? this.setErrors(this.state.confirmPassword, 'this field is required')
+// 		: confirmPasswordValue === passwordValue
+// 		? this.setSuccess(this.state.confirmPassword)
+// 		: this.setErrors(this.state.confirmPassword, "password doesn't match");
+// };

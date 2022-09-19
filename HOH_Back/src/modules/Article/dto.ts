@@ -38,7 +38,7 @@ class ArticleDTO {
     this.content_article = content_article;
     this.author_article = author_article;
     this.video = video;
-    this.admin_id = admin_id.map((admin_id: any) => new UserDTO(admin_id));
+    this.admin_id = admin_id;
     // this.books = books.map((book: any) => new BookDTO(book));
 
     //admin_id.map((admin_id : any) => new UserDTO(admin_id ))

@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "Muli";
+  src: local("Muli"), url(../../assets/fonts/muli/Muli.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-ExtraLight";
+  src: local("MuliExtraLight"),
+    url(../../assets/fonts/muli/Muli-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: local("MuliBold"),
+    url(../../assets/fonts/muli/Muli-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("RobotoBold"),
+    url(../../assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: local("RobotoLight"),
+    url(../../assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Quicksand-Light";
+  src: local("QuicksandLight"),
+    url(../../assets/fonts/Quicksand/Quicksand-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Peace Sans";
+  src: local("PeaceSans"),
+    url(../../assets/fonts/peace_sans/PeaceSansWebfont.ttf) format("truetype");
+}
+
+
+.aboutUsContainer {
+  font-size: 62.5% !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 96px;///AJOUTER
+
+  * {
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    // font-family: "Roboto-Bold";
+    font-family: "Peace Sans";
+    color: black;
+    font-size: 2.6em;
+    margin-right: 154px;
+  }
+
+  h2 {
+    font-family: "Roboto-Bold";
+    font-size: 2em;
+    margin-right: 154px;
+    color: white;
+  }
+
+  img {
+    filter: saturate(5%) contrast(125%);
+    height: 10%;
+    width: 84%;
+  }
+
+  .ligne {
+    height: 7px;
+    background-color: #ff7e92;
+    width: 26%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-right: 72px;
+  }
+
+  p {
+    font-family: "Quicksand-Light";
+    font-size: 2em;
+    width: 32%;
+  }
+
+  .actions {
+    display: flex;
+    background-color: black;
+    margin-top: 114px;
+    li {
+      font-family: "Quicksand-Light";
+      font-size: 1.5em;
+      width: 35%;
+      margin-top: 12px;
+      color: white;
+      span {
+        font-weight: bolder;
+        font-size: 1em;
+      }
+    }
+
+    .detailsAction {
+      // width: 10%;
+    }
+  }
+}
