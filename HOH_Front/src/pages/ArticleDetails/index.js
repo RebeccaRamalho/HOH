@@ -23,9 +23,6 @@ export default class ArticleDetails extends Component {
   //
   handleClick = () => {
     const articleId = this.props.match.params.article_id;
-
-    console.log("URL", this.props.match.url);
-
     this.props.history.push("/article/" + articleId);
 
     //
@@ -61,14 +58,21 @@ export default class ArticleDetails extends Component {
   //
   GetAnArticle = async () => {
     const articleId = this.props.match.params.article_id;
+    console.log("URL", this.props.match.params);
 
     try {
       const getAnArticle = await ArticleService.getOneArticle(articleId);
       //
+      console.log("ATICLE", getAnArticle.data.title);
       //
       this.setState({
         data: getAnArticle.data,
       });
+
+      // this.setState({
+      //   token: this.props.cookies.get("auth-cookie"),
+      // });
+      // localStorage.setItem("token", this.state.token);
       //
     } catch (error) {
       this.setState({ error: error });
@@ -80,26 +84,23 @@ export default class ArticleDetails extends Component {
         <Header url={this.props.match.url} />
         <div>
           <section>
-            {this.state.data.map((element, index) => {
-              return (
-                <div key={index}>
-                  <article style={{ marginTop: "-149px", marginLeft: "229px" }}>
-                    <h2>
-                      <b>Titre:</b> {element.title}
-                    </h2>
-                    <p>
-                      <b>Résumé de l'article:</b> {element.resume_article}
-                    </p>
-                    <p>
-                      <b>Contenu:</b> {element.content_article}
-                    </p>
-                    <p>
-                      <b>Auteur:</b> {element.author_article}
-                    </p>
-                  </article>
-                </div>
-              );
-            })}
+          
+            <div>
+              <article style={{ marginTop: "-149px", marginLeft: "229px" }}>
+                <h2>
+                  <b>Titre:</b> {this.state.data.title}
+                </h2>
+                <p>
+                  <b>Résumé de l'article:</b> {this.state.data.resume_article}
+                </p>
+                <p>
+                  <b>Contenu:</b> {this.state.data.content_article}
+                </p>
+                <p>
+                  <b>Auteur:</b> {this.state.data.author_article}
+                </p>
+              </article>
+            </div>
             <button
               type="button"
               onClick={this.handleSuppressClick}
@@ -170,23 +171,23 @@ export default class ArticleDetails extends Component {
       //     {/* <ArticleForm /> */}
       //     <div>
       //       <section>
-      //         {this.state.data.map((element, index) => {
+      //         {this.state.data.map((this.state.data, index) => {
       //           return (
       //             <div key={index}>
       //               <article
       //                 style={{ marginTop: "-149px", marginLeft: "46px" }}
       //               >
       //                 <h2>
-      //                   <b>Titre:</b> {element.title}
+      //                   <b>Titre:</b> {this.state.data.title}
       //                 </h2>
       //                 <p>
-      //                   <b>Résumé de l'article:</b> {element.resume_article}
+      //                   <b>Résumé de l'article:</b> {this.state.data.resume_article}
       //                 </p>
       //                 <p>
-      //                   <b>Contenu:</b> {element.content_article}
+      //                   <b>Contenu:</b> {this.state.data.content_article}
       //                 </p>
       //                 <p>
-      //                   <b>Auteur:</b> {element.author_article}
+      //                   <b>Auteur:</b> {this.state.data.author_article}
       //                 </p>
       //               </article>
       //             </div>

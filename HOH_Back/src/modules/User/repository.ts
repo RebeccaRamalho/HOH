@@ -4,7 +4,7 @@ import { User } from "./entity";
 import { IUserRepository } from "../../helpers/interfaces/user.interfaces";
 import { user } from "../../helpers/types/user.types";
 
-//ROLE => MODEL, REQUÊTE LA BDD
+//ROLE => MODEL, REQUÊTES
 @EntityRepository()
 class UserRepository implements IUserRepository {
   constructor(private manager: EntityManager) {}

@@ -38,6 +38,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules/
 HOH_Back/node_modules/
 HOH_Front/node_modules/
 HOH_Back/build/

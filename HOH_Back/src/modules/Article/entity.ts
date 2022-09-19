@@ -23,10 +23,7 @@ export class Article extends BaseEntity {
   })
   title: string;
 
-  @Column({
-    nullable: false,
-    length: 45,
-  })
+  @Column("longtext")
   img: string;
 
   // @Column({

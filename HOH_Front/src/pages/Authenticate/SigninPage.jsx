@@ -3,6 +3,8 @@ import { BrowserRouter as Link } from "react-router-dom";
 import { userService } from "../../services";
 import appContext from "../../store";
 import "../../assets/stylesheets/loginForm.scss";
+import { withCookies } from "react-cookie";
+
 //
 const initialState = {
   email: "",
@@ -13,6 +15,7 @@ const initialState = {
   user_nameError: "",
   error: null,
   valid: true,
+  // token: "",
 };
 
 //
@@ -66,11 +69,9 @@ class ReactForm extends React.Component {
   };
 
   handleChange = (e) => {
-    //récupère les valeurs du champs de formulaire dynamiquement
     const { name, value } = e.target;
 
-    this.setState({ [name]: value }); //met à jour email, user_name et password
-    ///
+    this.setState({ [name]: value });
     const isCheckbox = e.target.type === "checkbox";
     this.setState({
       [e.target.name]: isCheckbox ? e.target.checked : e.target.value,
@@ -82,12 +83,10 @@ class ReactForm extends React.Component {
 
     const isValid = this.validate();
     if (isValid) {
-      //clear the form
       // this.setState(initialState);
       this.setState({
         title: "",
-        img: "", /////////////////////////////////// remettre à ""
-        tags: "",
+        img: "",
         resume_article: "",
         content_article: "",
         author_article: "",
@@ -108,18 +107,22 @@ class ReactForm extends React.Component {
 
     try {
       const response = await userService.signin(
-        // on envoie les values comme paramètre de la fonction qui fait la requête post des éléments email, user_name et password.
-        this.state.email, //ici on récupère les valeurs actualisées/mis à jour à chaque tentative de remplissage de l'input/champs de formulaire
+        this.state.email,
         this.state.user_name,
         this.state.password
       );
 
-      localStorage.setItem("token", response.data.token);
-     
+      this.setState({
+        token: this.props.cookies.get("auth-cookie"),
+      });
+      localStorage.setItem("token", this.props.cookies.get("auth-cookie"));
+
+      // this.setState({
+      //   token: this.props.cookies.get("auth-cookie"),
+      // });
+      // localStorage.setItem("tooooken", this.state.token);
 
       this.props.history.push("/adminPage");
-
-      
     } catch (error) {
       console.error(error);
       this.setState({ error: error });
@@ -203,5 +206,4 @@ class ReactForm extends React.Component {
   }
 }
 
-export default ReactForm;
-
+export default withCookies(ReactForm);

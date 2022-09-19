@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import HomePage from "../src/pages/Homepage";
 import Sengager from "../src/pages/Sengager";
 import AboutUs from "../src/pages/AboutUs";
@@ -28,6 +28,7 @@ import { TestimonyDetails } from "./pages/TestimonyDetails";
 import { ArticleUpdateForm } from "./pages/ArticleUpdateForm";
 import Don from "./components/Don/index";
 import Logout from "./pages/Logout";
+import { withCookies } from "react-cookie";
 
 function PrivateRoute(props) {
   const token = localStorage.getItem("token");
@@ -38,49 +39,56 @@ function PrivateRoute(props) {
   return <Route render={() => <Redirect to="/" />} />;
 }
 
-function App(props) {
-  return (
-    <div className="App">
-      <Router>
-        <Switch>
-          {/*Visitor*/}
+class App extends Component {
+  state = {
+    // getting the cookie
+    cookie: this.props.cookies.get("auth-cookie") || "",
+  };
+  render() {
+    const { cookie } = this.state;
+    return (
+      <div className="App">
+        <Router>
+          <Switch>
+            {/*Visitor*/}
 
-          <Route exact path="/" component={HomePage} />
-          {/* <Route exact path="/logout" component={HomePage} /> */}
-          <Route exact path="/sengager" component={Sengager} />
-          <Route exact path="/aPropos" component={AboutUs} />
+            <Route exact path="/" component={HomePage} />
+            {/* <Route exact path="/logout" component={HomePage} /> */}
+            <Route exact path="/sengager" component={Sengager} />
+            <Route exact path="/aPropos" component={AboutUs} />
 
-          <Route exact path="/votrePetitMot" component={TestimonyForm} />
-          <Route
-            exact
-            path="/visitorArticle/:article_id"
-            component={VisitorArticleDetails}
-          />
-          <Route exact path="/allArticles" component={AllVisitorArticle} />
-          <Route exact path="/contact" component={ContactAssociation} />
-          <Route exact path="/don" component={Don} />
+            <Route exact path="/votrePetitMot" component={TestimonyForm} />
+            <Route
+              exact
+              path="/visitorArticle/:article_id"
+              component={VisitorArticleDetails}
+            />
+            <Route exact path="/allArticles" component={AllVisitorArticle} />
+            <Route exact path="/contact" component={ContactAssociation} />
+            <Route exact path="/don" component={Don} />
 
-          {/*Admin*/}
-          <Route exact path="/adminlogin" component={Login} />
-          <PrivateRoute path="/adminPage" component={AdminPage} />
-          <Route exact path="/logout" component={Logout} />
-          <PrivateRoute path="/articles" component={Articles} />
-          <PrivateRoute path="/temoignages" component={Testimonies} />
-          <PrivateRoute
-            path="/votrePetitMot/:id"
-            component={TestimonyDetails}
-          />
-          <PrivateRoute
-            path="/adminArticleDetails/:article_id"
-            component={ArticleDetails}
-          />
-          <PrivateRoute
-            path="/article/:article_id"
-            component={ArticleUpdateForm}
-          />
-        </Switch>
-      </Router>
-    </div>
-  );
+            {/*Admin*/}
+            <Route exact path="/adminlogin" component={Login} />
+            <PrivateRoute path="/adminPage" component={AdminPage} />
+            <Route exact path="/logout" component={Logout} />
+            <PrivateRoute path="/articles" component={Articles} />
+            <PrivateRoute path="/temoignages" component={Testimonies} />
+            <PrivateRoute
+              path="/votrePetitMot/:id"
+              component={TestimonyDetails}
+            />
+            <PrivateRoute
+              path="/adminArticleDetails/:article_id"
+              component={ArticleDetails}
+            />
+            <PrivateRoute
+              path="/article/:article_id"
+              component={ArticleUpdateForm}
+            />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
-export default App;
+export default withCookies(App);

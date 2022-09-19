@@ -1,0 +1,22 @@
+{
+  "name": "hoh_2022_sept",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "go": "concurrently \"cd HOH_Front && npm run start\" \" cd HOH_Back && npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RebeccaRamalho/HOH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RebeccaRamalho/HOH/issues"
+  },
+  "homepage": "https://github.com/RebeccaRamalho/HOH#readme",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}

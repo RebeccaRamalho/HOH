@@ -20,7 +20,6 @@ export class User extends BaseEntity {
     nullable: true,
     length: 45,
     // unique: true,
-
   })
   user_name: string;
 
@@ -39,12 +38,10 @@ export class User extends BaseEntity {
   })
   password: string;
 
-  @OneToMany(() => Article, 
-  (article) => article.author)
+  @OneToMany(() => Article, (article) => article.author)
   articles: Article[];
-   
-  @OneToMany(() => Testimony, 
-  (testimony) => testimony.author)
+
+  @OneToMany(() => Testimony, (testimony) => testimony.author)
   testimonies: Testimony[];
 
   @CreateDateColumn()

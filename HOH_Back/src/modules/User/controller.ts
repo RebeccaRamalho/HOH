@@ -46,6 +46,15 @@ class UserController {
   @Post("adminlogin")
   login = async (req: Request, res: Response, next: NextFunction) => {
     try {
+      // response.status(200).json({
+      //   token: token, //envoie dans les headers
+      //   Admin: {
+      //     admin_id: result[0].admin_id,
+      //     user_name: result[0].user_name,
+      //     password: result[0].password,
+      //     email: result[0].email,
+      //   },
+      // });
 
       const user = await this.userService.login({ ...req.body });
       const token = await this.jwtService.generateToken({ id: user.admin_id });

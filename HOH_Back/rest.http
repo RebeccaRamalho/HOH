@@ -1,4 +1,6 @@
-
+@cookie = "auth-cookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODUsImlhdCI6MTY2MzUxMjEwNX0.VbuJtbuCa2ozPFYz60xtsM5tVnNN2ggxXSvN9sWDf3g; Path=/; Expires=Tue, 18 Oct 2022 14:41:45 GMT"
+@article_id = 9
+@id = 47
 POST http://localhost:4000/api/adminRegister/
 Content-Type: application/json
 {
@@ -7,4 +9,54 @@ Content-Type: application/json
    "email": "kldlsdddddllfnxxkjk@dkkgmail.com",
    "password": "ddddddM0dMd"
 
+}
+####
+POST http://localhost:4000/api/adminlogin
+Content-Type: application/json
+
+{
+   "user_name": "Amoulou",
+   "email": "ameliakanu@jmail.com",
+   "password": "kkkA.100000"
+}
+####
+POST http://localhost:4000/api/articles
+Cookie: {{cookie}}
+Content-Type: application/json
+
+{
+        "title": "Bonjour monsieur LE MOCHE",
+        "img": "/",
+        "resume_article": "resume",
+        "content_article": "ee",
+        "author_article": "Maryse",
+        "video": "kkkkk",
+        "admin_id": 2
+}
+
+###
+GET http://localhost:4000/api/articles
+Cookie: {{cookie}}
+
+###
+GET http://localhost:4000/api/adminArticleDetails/{{article_id}}
+Cookie: {{cookie}}
+
+###
+DELETE http://localhost:4000/api/article/{{id}}
+Cookie: {{cookie}}
+
+###
+PUT http://localhost:4000/api/article/{{id}}
+Cookie: {{cookie}}
+Content-Type: application/json
+
+{
+        "title": "Bonjour monsieur LE MOCHE",
+        "img": "/",
+        "resume_article": "resume",
+        "content_article": "ee",
+        "author_article": "Maryse",
+        "video": "kkkkk"
+      
 }
