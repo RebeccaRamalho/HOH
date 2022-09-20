@@ -7,7 +7,7 @@ export interface IArticleService {
   add(articleData: Article | article): Promise<Article>;
   delete(article_id: string): Promise<any>;
   update(article_id: string, articleData: Article): Promise<any>;
-  getLastOne(article_id: string): Promise<Article>;
+  getLastOne(): Promise<Article[]>;
   getAllVisitorArticle(): Promise<Article[]>;
   visitorGetOneArticle(article_id: string): Promise<Article>;
 }
@@ -18,7 +18,7 @@ export interface IArticleRepository {
   addNew(articleEntity: any): Promise<any>;
   deleteOne(article_id: string): Promise<any>;
   modifyOne(article_id: string, articleData: Article): Promise<any>;
-  findLastOne(article_id: string): Promise<Article>;
+  findLastOne(): Promise<Article[]>;
   findAllVisitorArticle(): Promise<Article[]>;
   findOneVisitorArticle(article_id: string): Promise<Article>;
 }

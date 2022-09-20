@@ -56,8 +56,8 @@ export default class ArticleService implements IArticleService {
     const article = await this.articleRepo.findOneVisitorArticle(article_id);
     return article;
   }
-  async getLastOne(article_id: string) {
-    const article = await this.articleRepo.findLastOne(article_id);
+  async getLastOne() {
+    const article = await this.articleRepo.findLastOne();
     return article;
   }
   async delete(article_id: string) {

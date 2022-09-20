@@ -63,7 +63,6 @@ export default class ArticleDetails extends Component {
     try {
       const getAnArticle = await ArticleService.getOneArticle(articleId);
       //
-      console.log("ATICLE", getAnArticle.data.title);
       //
       this.setState({
         data: getAnArticle.data,
