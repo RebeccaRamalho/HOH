@@ -3,7 +3,6 @@ import { Article } from "./entity";
 import { IArticleRepository } from "../../helpers/interfaces/article.interfaces";
 import { article } from "../../helpers/types/article.types";
 
-//RÔLE: MODEL, REQUÊTES
 @EntityRepository()
 class ArticleRepository implements IArticleRepository {
   constructor(private manager: EntityManager) {}

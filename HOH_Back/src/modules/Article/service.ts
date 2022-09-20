@@ -25,14 +25,13 @@ export default class ArticleService implements IArticleService {
       "m"
     );
     //IMG
-    // if (!imgRegex.test(articleData.img)) {
-    //   throw new ApiError(400, "L'image n'est pas au bon format.");
-    // } else
-    if (
-      !articleData.author_article ||
-      !articleData.content_article ||
-      !articleData.resume_article ||
-      !articleData.title
+    if (!imgRegex.test(articleData.img)) {
+      throw new ApiError(400, "L'image n'est pas au bon format.");
+    } else if (
+      articleData.author_article ||
+      articleData.content_article ||
+      articleData.resume_article ||
+      articleData.title
     ) {
       throw new ApiError(
         400,
@@ -44,20 +43,18 @@ export default class ArticleService implements IArticleService {
       return newArticle;
     }
   }
+
   async getAll() {
     const articles = await this.articleRepo.findAll();
+
     return articles;
   }
   async getOne(article_id: string) {
     const article = await this.articleRepo.findOne(article_id);
     return article;
   }
-  async visitorGetOneArticle(article_id: string) {
-    const article = await this.articleRepo.findOneVisitorArticle(article_id);
-    return article;
-  }
-  async getLastOne() {
-    const article = await this.articleRepo.findLastOne();
+  async getLastOne(article_id: string) {
+    const article = await this.articleRepo.findLastOne(article_id);
     return article;
   }
   async delete(article_id: string) {
@@ -66,10 +63,5 @@ export default class ArticleService implements IArticleService {
   }
   async update(article_id: string, articleData: Article) {
     const article = await this.articleRepo.modifyOne(article_id, articleData);
-    return article;
-  }
-  async getAllVisitorArticle() {
-    const articles = await this.articleRepo.findAllVisitorArticle();
-    return articles;
   }
 }
