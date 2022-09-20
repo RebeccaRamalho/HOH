@@ -48,7 +48,6 @@ export class Testimony extends BaseEntity{
       name: "admin_id",
     })
     author: User;
-    //Not null
 
     @CreateDateColumn()
     created_at: Date;
