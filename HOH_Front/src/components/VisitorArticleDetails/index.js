@@ -21,15 +21,13 @@ export default class VisitorArticleDetails extends Component {
   GetAnArticle = async () => {
     const articleId = this.props.match.params.article_id;
 
-    console.log("ID", articleId);
-
     try {
       const getAnArticle = await ArticleService.VisitorGetOneArticle(articleId);
-      //
+      console.log("DATA VISITOR", getAnArticle.data);
+
       this.setState({
         data: getAnArticle.data,
       });
-      //
     } catch (error) {
       this.setState({ error: error });
     }
@@ -39,13 +37,12 @@ export default class VisitorArticleDetails extends Component {
       <div>
         <NavHomePage url={this.props.match.url} />
         <section style={{ padding: 0, marginTop: "6%" }}>
-          {/* <Nav style={{ marginTop: "-205px" }} /> */}
-          {this.state.data.map((element, index) => {
-            return (
-              <div key={index}>
+              <div>
                 <article className="articleDetailsContainer">
                   <div>
-                    <h2 className="visitorTitle" style={{fontSize: "143%"}}>{element.title}</h2>
+                    <h2 className="visitorTitle" style={{ fontSize: "143%" }}>
+                      {this.state.data.title}
+                    </h2>
                     <div
                       size="7"
                       width="70%"
@@ -55,18 +52,22 @@ export default class VisitorArticleDetails extends Component {
                     ></div>
                     {/* <strong><p className="pStylingVisitor">{element.resume_article}</p></strong> */}
                     <div>
-                      <p className="pStylingVisitor" style={{textAlign: "justify"}}>
-                        {element.content_article} 
+                      <p
+                        className="pStylingVisitor"
+                        style={{ textAlign: "justify" }}
+                      >
+                        {this.state.data.content_article}
                       </p>
                     </div>
                     <em>
-                      <p className="pStylingVisitor" style={{fontSize: "88%"}}>
-                        {element.author_article}
+                      <p
+                        className="pStylingVisitor"
+                        style={{ fontSize: "88%" }}
+                      >
+                        {this.state.data.author_article}
                       </p>
                     </em>
                   </div>
-
-                 
 
                   <div>
                     <img
@@ -77,7 +78,7 @@ export default class VisitorArticleDetails extends Component {
                     {/* <p>1</p> */}
                     <img
                       style={{ marginTop: "86px" }}
-                      src={element.img}
+                      src={this.state.data.img}
                       alt="article illustration photo"
                       className="imgcard actualityHover imgVisitor"
                     />
@@ -85,8 +86,6 @@ export default class VisitorArticleDetails extends Component {
                   {/* <div style={{ width: "1px", color: "black", border: "1px solid black", transform: "rotate(90deg)"}}></div> */}
                 </article>
               </div>
-            );
-          })}
         </section>
         <Footer />
       </div>
