@@ -43,7 +43,7 @@ export class Article extends BaseEntity {
   @Column({
     default: null,
     nullable: false,
-    length: 500,
+    length: 255,
   })
   content_article: string;
 

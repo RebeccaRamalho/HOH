@@ -19,14 +19,21 @@ class ArticleRepository implements IArticleRepository {
   async findOne(article_id: any) {
     return await this.manager.findOne(Article, article_id);
   }
-  async findLastOne(article_id: any) {
-    return await this.manager.findOne(Article, article_id);
+  async findLastOne() {
+    return await this.manager.find(Article, { take: 10 });
   }
   async deleteOne(article_id: string) {
     return await this.manager.delete(Article, article_id);
   }
   async modifyOne(article_id: string, articleData: Article) {
     return await this.manager.update(Article, article_id, articleData);
+  }
+  async findAllVisitorArticle() {
+    const articles = await this.manager.find(Article);
+    return articles;
+  }
+  async findOneVisitorArticle(article_id: any) {
+    return await this.manager.findOne(Article, article_id);
   }
 }
 export default ArticleRepository;

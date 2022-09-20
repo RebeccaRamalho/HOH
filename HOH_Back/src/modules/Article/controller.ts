@@ -44,14 +44,26 @@ class ArticleController {
     }
   };
 
-  ///limiter à 3 articles
-  @Get("article")
+  @Get("derniersArticles")
   @Middleware(auth.isAuth)
   getLastOne = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const article_id = req.params.id;
-      let article = await this.articleService.getLastOne(article_id);
-      res.status(201).json(article);
+      let article = await this.articleService.getLastOne();
+      res.status(200).json(article);
+    } catch (err) {
+      next(err);
+    }
+  };
+  @Get("allArticles")
+  getAllVisitorArticle = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      let articles = await this.articleService.getAllVisitorArticle();
+      const result = articles.map((article) => new ArticleDTO(article));
+      res.status(200).json(result);
     } catch (err) {
       next(err);
     }
@@ -64,6 +76,21 @@ class ArticleController {
       const article_id = req.params.article_id;
       let article = await this.articleService.getOne(article_id);
       res.status(201).json(new ArticleDTO(article));
+    } catch (err) {
+      next(err);
+    }
+  };
+  @Get("visitorArticle/:id")
+  visitorGetOneArticle = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const article_id = req.params.id;
+      console.log("id", article_id)
+      let article = await this.articleService.visitorGetOneArticle(article_id);
+      res.status(200).json(new ArticleDTO(article));
     } catch (err) {
       next(err);
     }

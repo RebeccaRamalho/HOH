@@ -1,6 +1,6 @@
 @cookie = "auth-cookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODUsImlhdCI6MTY2MzUxMjEwNX0.VbuJtbuCa2ozPFYz60xtsM5tVnNN2ggxXSvN9sWDf3g; Path=/; Expires=Tue, 18 Oct 2022 14:41:45 GMT"
 @article_id = 9
-@id = 47
+@id = 50
 POST http://localhost:4000/api/adminRegister/
 Content-Type: application/json
 {
@@ -39,8 +39,17 @@ GET http://localhost:4000/api/articles
 Cookie: {{cookie}}
 
 ###
+GET http://localhost:4000/api/derniersArticles
+
+###
+GET http://localhost:4000/api/allArticles
+
+###
 GET http://localhost:4000/api/adminArticleDetails/{{article_id}}
 Cookie: {{cookie}}
+
+###
+GET http://localhost:4000/api/visitorArticle/{{id}}
 
 ###
 DELETE http://localhost:4000/api/article/{{id}}
