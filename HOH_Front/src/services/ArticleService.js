@@ -30,7 +30,6 @@ const ArticleService = {
   },
   getOneArticle: async (articleId) => {
     const id = articleId;
-    console.log("Iddd", id);
     return await api.get(`/adminArticleDetails/${id}`, config);
   },
   //delete

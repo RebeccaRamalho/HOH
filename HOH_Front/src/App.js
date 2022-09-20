@@ -41,11 +41,9 @@ function PrivateRoute(props) {
 
 class App extends Component {
   state = {
-    // getting the cookie
     cookie: this.props.cookies.get("auth-cookie") || "",
   };
   render() {
-    const { cookie } = this.state;
     return (
       <div className="App">
         <Router>

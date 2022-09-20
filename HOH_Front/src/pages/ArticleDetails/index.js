@@ -62,17 +62,10 @@ export default class ArticleDetails extends Component {
 
     try {
       const getAnArticle = await ArticleService.getOneArticle(articleId);
-      //
-      //
+  
       this.setState({
         data: getAnArticle.data,
       });
-
-      // this.setState({
-      //   token: this.props.cookies.get("auth-cookie"),
-      // });
-      // localStorage.setItem("token", this.state.token);
-      //
     } catch (error) {
       this.setState({ error: error });
     }
@@ -83,7 +76,6 @@ export default class ArticleDetails extends Component {
         <Header url={this.props.match.url} />
         <div>
           <section>
-          
             <div>
               <article style={{ marginTop: "-149px", marginLeft: "229px" }}>
                 <h2>
