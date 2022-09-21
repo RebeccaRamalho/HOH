@@ -18,5 +18,8 @@
   "homepage": "https://github.com/RebeccaRamalho/HOH#readme",
   "dependencies": {
     "concurrently": "^7.4.0"
+  },
+  "devDependencies": {
+    "electron": "20.1.4"
   }
 }
