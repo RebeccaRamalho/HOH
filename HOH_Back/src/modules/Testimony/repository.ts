@@ -11,5 +11,8 @@ class TestimonyRepository implements ITestimonyRepository {
     const testimony = await this.manager.save(Testimony, testimonyEntity);
     return testimony;
   }
+  async find3LastTestimony() {
+    return await this.manager.find(Testimony, { take: 3 });
+  }
 }
 export default TestimonyRepository;

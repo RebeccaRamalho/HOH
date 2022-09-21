@@ -7,7 +7,7 @@ export interface ITestimonyService {
   add(testimonyEntity: Testimony): Promise<Testimony>;
   // delete(article_id: string): Promise<any>;
   // update(article_id: string, articleData: Testimony): Promise<any>;
-  // getLastOne(article_id: string): Promise<Testimony>;
+  get3LastTestimony(): Promise<Testimony[]>;
 }
 export interface ITestimonyRepository {
   // findOne(article_id: string): Promise<Testimony>;
@@ -15,5 +15,5 @@ export interface ITestimonyRepository {
   addNew(testimonyEntity: any): Promise<any>;
   // deleteOne(article_id: string): Promise<any>;
   // updateOne(article_id: string, articleData: Testimony): Promise<any>;
-  // findLastOne(article_id: string): Promise<Testimony>;
+  find3LastTestimony(): Promise<Testimony[]>;
 }

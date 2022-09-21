@@ -31,5 +31,24 @@ class TestimonyController {
       next(err);
     }
   };
+
+  @Get("derniersPetitMots")
+  @Middleware(auth.isAuth)
+  get3LastTestimony = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const testimonies = await this.testimonyService.get3LastTestimony();
+      const result = testimonies.map(
+        (testimony) => new TestimonyDTO(testimony)
+      );
+
+      res.status(200).json(result);
+    } catch (err) {
+      next(err);
+    }
+  };
 }
 export default TestimonyController;
