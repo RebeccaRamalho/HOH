@@ -49,6 +49,7 @@ class ArticleController {
   getLastOne = async (req: Request, res: Response, next: NextFunction) => {
     try {
       let article = await this.articleService.getLastOne();
+      //ERREUR manque l'appel au DTO
       res.status(200).json(article);
     } catch (err) {
       next(err);
@@ -88,7 +89,7 @@ class ArticleController {
   ) => {
     try {
       const article_id = req.params.id;
-      console.log("id", article_id)
+      console.log("id", article_id);
       let article = await this.articleService.visitorGetOneArticle(article_id);
       res.status(200).json(new ArticleDTO(article));
     } catch (err) {
