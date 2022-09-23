@@ -28,21 +28,20 @@ export default class ArticleService implements IArticleService {
     // if (!imgRegex.test(articleData.img)) {
     //   throw new ApiError(400, "L'image n'est pas au bon format.");
     // } else
-    if (
-      !articleData.author_article ||
-      !articleData.content_article ||
-      !articleData.resume_article ||
-      !articleData.title
-    ) {
-      throw new ApiError(
-        400,
-        "Vous devez à minima remplir les champs auteur, contenu, résumé et titre"
-      );
-    } else {
-      const newArticle = await this.articleRepo.addNew(articleData);
-      // await this.mailerService.sendMail(userData);
-      return newArticle;
-    }
+    // if (
+    //   !articleData.author_article ||
+    //   !articleData.content_article ||
+    //   !articleData.resume_article ||
+    //   !articleData.title
+    // ) {
+    //   throw new ApiError(
+    //     400,
+    //     "Vous devez à minima remplir les champs auteur, contenu, résumé et titre"
+    //   );
+    // } else {
+    const newArticle = await this.articleRepo.addNew(articleData);
+    // await this.mailerService.sendMail(userData);
+    return newArticle;
   }
   async getAll() {
     const articles = await this.articleRepo.findAll();

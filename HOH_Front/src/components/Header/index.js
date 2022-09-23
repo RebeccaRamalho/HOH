@@ -21,7 +21,6 @@ export default class index extends Component {
     localStorage.clear();
     // window.location.href = "/";
     this.props.history.push("/articles/");
-    console.log("OKkk");
   };
 
   render() {

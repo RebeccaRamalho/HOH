@@ -10,7 +10,7 @@ Content-Type: application/json
         "title": "Bonjour monsieur LE MOCHE",
         "img": "img.PNG",
         "resume_article": "resume",
-        "content_article": "",
+        "content_article": "Hello",
         "author_article": "Maryse",
         "video": "kkkkk",
         "admin_id": 2

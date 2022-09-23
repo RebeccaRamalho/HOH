@@ -32,10 +32,7 @@ export class Articles extends Component {
       this.setState({
         data: getAllArticle.data,
       });
-      this.setState({
-        token: this.props.cookies.get("auth-cookie"),
-      });
-      localStorage.setItem("token", this.state.token);
+    
     } catch (error) {
       this.setState({ error: error });
     }

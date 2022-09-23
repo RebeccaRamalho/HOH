@@ -125,6 +125,7 @@ class ArticleForm extends React.Component {
     }
 
     try {
+      console.log("data", this.state.title);
       const data = await ArticleService.publishArticle(
         this.state.title,
         this.state.img,
@@ -133,11 +134,7 @@ class ArticleForm extends React.Component {
         this.state.author_article,
         this.state.video
       );
-      // this.setState({
-      //   token: this.props.cookies.get("auth-cookie"),
-      // });
-      // localStorage.setItem("token", this.state.token);
-      console.log("history", this.props);
+      console.log("article", this.state.title);
       this.props.history.push("/articles/");
     } catch (error) {
       this.setState({ error: error });
@@ -257,4 +254,4 @@ class ArticleForm extends React.Component {
     );
   }
 }
-export default withCookies(ArticleForm);
+export default ArticleForm;

@@ -4,9 +4,8 @@ import Header from "../../components/Header";
 import { useHistory } from "react-router-dom";
 import connectedUser2 from "../../assets/images/connectedUser2.jpg";
 import "../../assets/stylesheets/test.scss";
-//
 
-//
+
 export default class ArticleDetails extends Component {
   constructor(props) {
     super(props);
@@ -39,17 +38,15 @@ export default class ArticleDetails extends Component {
 
   handleSuppressClick = async () => {
     const articleId = this.props.match.params.article_id;
-    this.props.history.push("/articles/");
     try {
       await ArticleService.deleteOneArticle(articleId);
-      // localStorage.setItem("token", ArticleService.data.token);////////////////////
-      console.log("history", this.props);
+      console.log("PROPS IN DELETE", this.props)
+      this.props.history.push("/articles/");
     } catch (error) {
       this.setState({
         error: error,
       });
     }
-    // window.location.reload();
   };
   //
   async componentDidMount() {
@@ -83,7 +80,6 @@ export default class ArticleDetails extends Component {
         <Header url={this.props.match.url} />
         <div>
           <section>
-          
             <div>
               <article style={{ marginTop: "-149px", marginLeft: "229px" }}>
                 <h2>
