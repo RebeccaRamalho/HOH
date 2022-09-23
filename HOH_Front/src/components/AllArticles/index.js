@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import appContext from '../../store';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ArticleService } from "../../services";
 import { ArticleForm } from "../ArticleForm";
@@ -55,7 +55,7 @@ export class Articles extends Component {
                     style={{ marginLeft: "-60px" }}
                   >
                     <figure className="article">
-                      <a href={"/adminArticleDetails/" + element.article_id}>
+                      <Link to={"/adminArticleDetails/" + element.article_id}>
                         <img
                           className="imgcard"
                           // src={mainArticleOne}
@@ -66,7 +66,7 @@ export class Articles extends Component {
                             height: this.state.height,
                           }}
                         />
-                      </a>
+                      </Link>
                     </figure>
 
                     {/* <h4>
@@ -75,7 +75,7 @@ export class Articles extends Component {
                           className="titleAdmin"
                         >
                           {element.title}
-                        </a>
+                        </Link>
                       </h4> */}
 
                     <button
@@ -83,9 +83,9 @@ export class Articles extends Component {
                       style={{ width: "123px" }}
                       type="button"
                     >
-                      <a href={"/adminArticleDetails/" + element.article_id}>
+                      <Link to={"/adminArticleDetails/" + element.article_id}>
                         Contenu de l'article
-                      </a>
+                      </Link>
                     </button>
                   </article>
                 </div>
@@ -103,13 +103,13 @@ export class Articles extends Component {
       //       <div class="header-greet">
       //         <span>Bonjour Mizu</span>
 
-      //         <a href="/logout" onClick={this.logout} class="logout-btn white">
+      //         <Link to="/logout" onClick={this.logout} class="logout-btn white">
       //           <img
       //             src={connectedUser2}
       //             alt="admin profil picture"
       //             class="AdminPhoto"
       //           />
-      //         </a>
+      //         </Link>
       //       </div>
       //     </div>
       //   </div>
@@ -117,27 +117,27 @@ export class Articles extends Component {
       //   <div class="admin-sidebar">
       //     <ul>
       //       <li className="liAdmin">
-      //         <a href="/adminPage" class="white">
+      //         <Link to="/adminPage" class="white">
       //           {" "}
       //           Accueil
-      //         </a>
+      //         </Link>
       //       </li>
       //       <li className="liAdmin">
-      //         <a href="/articles" class="white">
+      //         <Link to="/articles" class="white">
       //           {" "}
       //           Articles
-      //         </a>
+      //         </Link>
       //       </li>
 
       //       <li className="liAdmin">
-      //         <a href="/temoignages" class="white">
+      //         <Link to="/temoignages" class="white">
       //           Témoignages
-      //         </a>
+      //         </Link>
       //       </li>
       //       <li className="liAdmin">
-      //         <a href="/logout" onClick={this.logout} class="white">
+      //         <Link to="/logout" onClick={this.logout} class="white">
       //           Déconnexion
-      //         </a>
+      //         </Link>
       //       </li>
       //     </ul>
       //   </div>
@@ -162,7 +162,7 @@ export class Articles extends Component {
       //                 style={{ marginLeft: "-60px" }}
       //               >
       //                 <figure className="article">
-      //                   <a href={"/adminArticleDetails/" + element.article_id}>
+      //                   <Link to={"/adminArticleDetails/" + element.article_id}>
       //                     <img
       //                       className="imgcard"
       //                       // src={mainArticleOne}
@@ -173,7 +173,7 @@ export class Articles extends Component {
       //                         height: this.state.height,
       //                       }}
       //                     />
-      //                   </a>
+      //                   </Link>
       //                 </figure>
 
       //                 {/* <h4>
@@ -182,16 +182,16 @@ export class Articles extends Component {
       //                     className="titleAdmin"
       //                   >
       //                     {element.title}
-      //                   </a>
+      //                   </Link>
       //                 </h4> */}
 
       //                 <button
       //                   className="AdminDetails articleDetailsAdmin"
       //                   style={{ width: "123px" }}
       //                 >
-      //                   <a href={"/adminArticleDetails/" + element.article_id}>
+      //                   <Link to={"/adminArticleDetails/" + element.article_id}>
       //                     Contenu de l'article
-      //                   </a>
+      //                   </Link>
       //                 </button>
       //               </article>
       //             </div>
