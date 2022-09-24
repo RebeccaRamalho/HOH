@@ -14,5 +14,11 @@ class TestimonyRepository implements ITestimonyRepository {
   async find3LastTestimony() {
     return await this.manager.find(Testimony, { take: 3 });
   }
+  async findAll() {
+    return await this.manager.find(Testimony);
+  }
+  async findOne(testimony_id: any) {
+    return await this.manager.findOne(Testimony, testimony_id);
+  }
 }
 export default TestimonyRepository;

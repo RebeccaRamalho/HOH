@@ -26,6 +26,7 @@ export class Testimonies extends Component {
       this.setState({
         data: resAllTestimony.data,
       });
+      console.log("TESTIMOONY", this.state.data);
     } catch (error) {
       console.error(error);
       this.setState({ error: error });

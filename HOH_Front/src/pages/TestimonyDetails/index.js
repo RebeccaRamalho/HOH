@@ -43,7 +43,7 @@ export class TestimonyDetails extends Component {
         data: getAnArticle.data,
       });
       //
-      // console.log("data", this.state.data);
+      console.log("data", this.state.data);
     } catch (error) {
       this.setState({ error: error });
     }
@@ -55,23 +55,19 @@ export class TestimonyDetails extends Component {
         <Header url={this.props.match.url} />
         <div>
           <section style={{ marginTop: "-145px" }}>
-            {this.state.data.map((element, index) => {
-              return (
-                <div key={index}>
-                  <div>
-                    <h1 style={{ marginLeft: "-197px", fontSize: "19px" }}>
-                      Auteur: {element.last_name}
-                    </h1>
-                    <p>Role: {element.role}</p>
-                    <p>Opinion: "{element.opinion}"</p>
-                  </div>
-                  <button type="button" onClick={this.handleClick}>
-                    Supprimer
-                  </button>
-                  {/* <button onClick={this.renderTestimony}>Ajouter</button> */}
-                </div>
-              );
-            })}
+            <div>
+              <div>
+                <h1 style={{ marginLeft: "-197px", fontSize: "19px" }}>
+                  Auteur: {this.state.data.last_name}
+                </h1>
+                <p>Role: {this.state.data.role}</p>
+                <p>Opinion: "{this.state.data.opinion}"</p>
+              </div>
+              <button type="button" onClick={this.handleClick}>
+                Supprimer
+              </button>
+              {/* <button onClick={this.renderTestimony}>Ajouter</button> */}
+            </div>
           </section>
         </div>
       </div>
@@ -129,15 +125,15 @@ export class TestimonyDetails extends Component {
       //     {/* <ArticleForm /> */}
       //     <div>
       //       <section style={{ marginTop: "-145px" }}>
-      //         {this.state.data.map((element, index) => {
+      //         {this.state.data.map((this.state, index) => {
       //           return (
       //             <div key={index}>
       //               <div>
       //                 <h1 style={{ marginLeft: "-197px", fontSize: "19px" }}>
-      //                   Auteur: {element.last_name}
+      //                   Auteur: {this.state.last_name}
       //                 </h1>
-      //                 <p>Role: {element.role}</p>
-      //                 <p>Opinion: "{element.opinion}"</p>
+      //                 <p>Role: {this.state.role}</p>
+      //                 <p>Opinion: "{this.state.opinion}"</p>
       //               </div>
       //               <button onClick={this.handleClick}>Supprimer</button>
       //               {/* <button onClick={this.renderTestimony}>Ajouter</button> */}

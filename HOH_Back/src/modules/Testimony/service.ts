@@ -26,4 +26,12 @@ export default class TestimonyService implements ITestimonyService {
     const testimonies = await this.testimonyRepo.find3LastTestimony();
     return testimonies;
   }
+  async getAll() {
+    const testimonies = await this.testimonyRepo.findAll();
+    return testimonies;
+  }
+  async getOne(testimony_id: string) {
+    const testimony = await this.testimonyRepo.findOne(testimony_id);
+    return testimony;
+  }
 }

@@ -102,11 +102,9 @@ class ArticleForm extends React.Component {
 
     const isValid = this.validate();
     if (isValid) {
-      //cear the form
-      // this.setState(initialState);
       this.setState({
         title: "",
-        img: "", /////////////////////////////////// remettre à ""
+        img: "",
         resume_article: "",
         content_article: "",
         author_article: "",
@@ -133,12 +131,7 @@ class ArticleForm extends React.Component {
         this.state.author_article,
         this.state.video
       );
-      // this.setState({
-      //   token: this.props.cookies.get("auth-cookie"),
-      // });
-      // localStorage.setItem("token", this.state.token);
-      console.log("history", this.props);
-      this.props.history.push("/articles/");
+      window.location.href = "/articles";
     } catch (error) {
       this.setState({ error: error });
     }
@@ -257,4 +250,4 @@ class ArticleForm extends React.Component {
     );
   }
 }
-export default withCookies(ArticleForm);
+export default ArticleForm;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../../assets/stylesheets/header.scss";
 import Header1 from "../../assets/images/Header1.jpg";
 import Header2 from "../../assets/images/Header2.jpeg";
@@ -51,9 +52,9 @@ export default class index extends Component {
               l’énergie, une synergie de compétences et le don de soi.
             </p>
 
-            {/* <a href="/About" className="enSavoirPlus">
+            {/* <Link to="/About" className="enSavoirPlus">
               En savoir plus <em>&rarr;</em>
-            </a> */}
+            </Link> */}
           </article>
           <section className="HomepageImage">
             <img className="imgHeader" src={Header2} alt="taylor" />
@@ -73,7 +74,7 @@ export default class index extends Component {
               <img
                 src={facebook}
                 style={{
-                  marginLeft: "25px",
+                  marginLeft: "-15px",
                   transform: "rotate(90deg)",
                 }}
                 alt="facebook logo"
@@ -104,22 +105,22 @@ export default class index extends Component {
           <div class="admin-sidebar">
             <ul>
               <li className="liAdmin">
-                <a href="/articles" class="white">
+                <Link to="/articles" class="white">
                   {" "}
                   Articles
-                </a>
+                </Link>
               </li>
 
               <li className="liAdmin">
-                <a href="/temoignages" class="white">
+                <Link to="/temoignages" class="white">
                   Témoignages
-                </a>
+                </Link>
               </li>
 
               <li className="liAdmin">
-                <a href="/logout" onClick={this.logout} class="white">
+                <Link to="/logout" onClick={this.logout} class="white">
                   Déconnexion
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -164,27 +165,27 @@ export default class index extends Component {
           <div class="admin-sidebar">
             <ul>
               <li className="liAdmin">
-                <a href="/adminPage" class="white">
+                <Link to="/adminPage" class="white">
                   Acceuil
-                </a>
+                </Link>
               </li>
               <li className="liAdmin">
-                <a href="/articles" class="white">
+                <Link to="/articles" class="white">
                   {" "}
                   Articles
-                </a>
+                </Link>
               </li>
 
               <li className="liAdmin">
-                <a href="/temoignages" class="white">
+                <Link to="/temoignages" class="white">
                   Témoignages
-                </a>
+                </Link>
               </li>
 
               <li className="liAdmin">
-                <a href="/logout" onClick={this.logout} class="white">
+                <Link to="/logout" onClick={this.logout} class="white">
                   Déconnexion
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

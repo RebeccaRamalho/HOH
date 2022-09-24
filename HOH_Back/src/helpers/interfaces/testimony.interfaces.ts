@@ -2,18 +2,18 @@ import { Testimony } from "../../modules/Testimony/entity";
 import { testimony } from "../types/testimony.types";
 
 export interface ITestimonyService {
-  // getOne(article_id: string): Promise<Testimony>;
-  // getAll(): Promise<Testimony[]>;
+  getOne(testimony_id: string): Promise<Testimony>;
+  getAll(): Promise<Testimony[]>;
   add(testimonyEntity: Testimony): Promise<Testimony>;
-  // delete(article_id: string): Promise<any>;
-  // update(article_id: string, articleData: Testimony): Promise<any>;
+  // delete(testimony_id: string): Promise<any>;
+  // update(testimony_id: string, testimonyData: Testimony): Promise<any>;
   get3LastTestimony(): Promise<Testimony[]>;
 }
 export interface ITestimonyRepository {
-  // findOne(article_id: string): Promise<Testimony>;
-  // findAll(): Promise<Testimony[]>;
+  findOne(testimony_id: any): Promise<Testimony>;
+  findAll(): Promise<Testimony[]>;
   addNew(testimonyEntity: any): Promise<any>;
-  // deleteOne(article_id: string): Promise<any>;
-  // updateOne(article_id: string, articleData: Testimony): Promise<any>;
+  // deleteOne(testimony_id: string): Promise<any>;
+  // updateOne(testimony_id: string, testimonyData: Testimony): Promise<any>;
   find3LastTestimony(): Promise<Testimony[]>;
 }

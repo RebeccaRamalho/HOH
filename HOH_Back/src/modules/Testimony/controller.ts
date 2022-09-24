@@ -21,12 +21,27 @@ class TestimonyController {
     this.jwtService = jwtService;
   }
 
+  //admin
   @Post("votrePetitMot")
   @Middleware(auth.isAuth)
   add = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const testimony = await this.testimonyService.add({ ...req.body });
       res.status(201).json(new TestimonyDTO(testimony));
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  @Get("votrePetitMot/:id")
+  @Middleware(auth.isAuth)
+  getOne = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const testimony_id = req.params.id;
+
+      console.log("ID", testimony_id);
+      const testimony = await this.testimonyService.getOne(testimony_id);
+      res.status(200).json(new TestimonyDTO(testimony));
     } catch (err) {
       next(err);
     }
@@ -41,6 +56,22 @@ class TestimonyController {
   ) => {
     try {
       const testimonies = await this.testimonyService.get3LastTestimony();
+      const result = testimonies.map(
+        (testimony) => new TestimonyDTO(testimony)
+      );
+
+      res.status(200).json(result);
+    } catch (err) {
+      next(err);
+    }
+  };
+
+  //VISITOR
+  @Get("votrePetitMot")
+  @Middleware(auth.isAuth)
+  getAll = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const testimonies = await this.testimonyService.getAll();
       const result = testimonies.map(
         (testimony) => new TestimonyDTO(testimony)
       );

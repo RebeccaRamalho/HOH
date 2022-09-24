@@ -7,11 +7,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  // <CookiesProvider>
+  <CookiesProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-  // </CookiesProvider>,
+  </CookiesProvider>,
   document.getElementById("root")
 );
 

@@ -15,12 +15,12 @@ const reviewService = {
   },
   //Admin
   allTestimony: async () => {
-    return await api.post("/votrePetitMot", config);
+    return await api.get("/votrePetitMot", config);
   },
   getOneTestimony: async (testimonyId) => {
     const id = testimonyId;
 
-    return await api.post(`/votrePetitMot/${id}`, config)
+    return await api.get(`/votrePetitMot/${id}`, config)
   },
   deleteOneTestimony: async (testimonyId) => {
     const id = testimonyId;

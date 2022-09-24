@@ -39,20 +39,20 @@ export default class test extends Component {
         //     <ul>
 
         //       <li className="liAdmin">
-        //         <a href="/articles" class="white">
+        //         <Link to="/articles" class="white">
         //           {" "}
         //           Articles
         //         </a>
         //       </li>
 
         //       <li className="liAdmin">
-        //         <a href="/temoignages" class="white">
+        //         <Link to="/temoignages" class="white">
         //           Témoignages
         //         </a>
         //       </li>
 
         //       <li className="liAdmin">
-        //         <a href="/logout" onClick={this.logout} class="white">
+        //         <Link to="/logout" onClick={this.logout} class="white">
         //           Déconnexion
         //         </a>
         //       </li>
