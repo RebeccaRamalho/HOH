@@ -117,11 +117,6 @@ class ReactForm extends React.Component {
       });
       localStorage.setItem("token", this.props.cookies.get("auth-cookie"));
 
-      // this.setState({
-      //   token: this.props.cookies.get("auth-cookie"),
-      // });
-      // localStorage.setItem("tooooken", this.state.token);
-
       this.props.history.push("/adminPage");
     } catch (error) {
       console.error(error);

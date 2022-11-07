@@ -1,5 +1,6 @@
 {
   "name": "hand-of-hope-client",
+  "homepage": "http://www.hand-ofhope.fr/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

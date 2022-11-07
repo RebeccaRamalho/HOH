@@ -5,7 +5,6 @@ import { listenerCount } from "process";
 import handleError from './middlewares/handleError';
 
 class App extends Server {
-  //AC: Array<Object>
   constructor(routes: Array<Object>, middlewares: Object) {
     super(); //The super keyword is used to access properties on an object literal or class's [[Prototype]], or invoke a superclass's constructor.
 
@@ -14,7 +13,6 @@ class App extends Server {
     this.initializeErrorHandler();
   }
 
-  //AC=> Pourquoi typer deux fois middleware?
     initializeMiddlewares(middlewares: any) {
       for (const key in middlewares) {
         if (key == "csrf") {
@@ -29,7 +27,6 @@ class App extends Server {
       }
     }
 
-  //AC
     initializeErrorHandler() {
       this.app.use(handleError);
     }

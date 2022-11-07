@@ -10,12 +10,10 @@ import cors from "cors";
 //middlewares
 import AuthMiddleware from "./auth";
 
-//AC
 //initialize middlewares with dependencies
 const auth = new AuthMiddleware(jwtService);
 const logger = new Logger(winston);
 const csrf = csurf({ cookie: true });
-//AC
 
 //export all custom middlewares
 export { auth, logger, csrf };

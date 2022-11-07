@@ -19,9 +19,7 @@ export default class index extends Component {
   }
   logout = () => {
     localStorage.clear();
-    // window.location.href = "/";
     this.props.history.push("/articles/");
-    console.log("OKkk");
   };
 
   render() {
@@ -88,23 +86,23 @@ export default class index extends Component {
         <div class="all">
           <div class="admin-header">
             <div class="header-text">
-              <h3>Back-office</h3>
+              <h3>Dashboard</h3>
 
               <div class="header-greet">
-                <span>Bonjour Mizu</span>
+                {/* <span>Bonjour Mizu</span>
 
                 <img
                   src={connectedUser2}
                   alt="admin profil picture"
                   class="AdminPhoto"
-                />
+                /> */}
               </div>
             </div>
           </div>
 
           <div class="admin-sidebar">
             <ul>
-              <li className="liAdmin">
+              <li className="liAdmin" id="articleLink">
                 <Link to="/articles" class="white">
                   {" "}
                   Articles
@@ -148,27 +146,27 @@ export default class index extends Component {
         <div class="all">
           <div class="admin-header">
             <div class="header-text">
-              <h3>Back-office</h3>
+              <h3>Dashboard</h3>
 
               <div class="header-greet">
-                <span>Bonjour Mizu</span>
-
+                {/* <span>Bonjour Mizu</span> */}
+                {/* 
                 <img
                   src={connectedUser2}
                   alt="admin profil picture"
                   class="AdminPhoto"
-                />
+                /> */}
               </div>
             </div>
           </div>
 
           <div class="admin-sidebar">
             <ul>
-              <li className="liAdmin">
+              {/* <li className="liAdmin">
                 <Link to="/adminPage" class="white">
                   Acceuil
                 </Link>
-              </li>
+              </li> */}
               <li className="liAdmin">
                 <Link to="/articles" class="white">
                   {" "}
