@@ -1,5 +1,5 @@
 For run app :
--  open terminal and write cd frontJS 
+-  open terminal and write `cd frontJS` 
 -  `npm run start`
 - open other terminal window and write cd back 
 -  `npm run start` 
