@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 //AC
 import { Server } from "@overnightjs/core";
 import { listenerCount } from "process";
-import handleError from './middlewares/handleError';
+import handleError from '../middlewares/handleError';
 
 class App extends Server {
   //AC: Array<Object>

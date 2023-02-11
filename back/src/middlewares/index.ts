@@ -1,8 +1,8 @@
 import express from "express";
-import { jwtService } from "../../libs";
+import { jwtService } from "../libs";
 import cookieParser from "cookie-parser";
 import winston, { loggers } from "winston";
-import Logger from "../../helpers/logger";
+import Logger from "../helpers/logger";
 import morgan from "morgan";
 import csurf from "csurf";
 import cors from "cors";

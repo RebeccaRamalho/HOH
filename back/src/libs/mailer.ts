@@ -1,4 +1,4 @@
-import { User } from "../modules/User/entity";
+import  User  from "../modules/User/entity";
 
 export interface IMailerService {
   sendMail(user: User): Promise<void>;

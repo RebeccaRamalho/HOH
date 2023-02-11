@@ -8,7 +8,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { User } from "../User/entity";
+import  User  from "../User/entity";
 
 @Entity("testimonytest")
 export class Testimony extends BaseEntity{

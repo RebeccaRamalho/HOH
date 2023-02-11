@@ -4,14 +4,14 @@ import {
   Column,
   BaseEntity,
   ManyToOne,
-  OneToMany,
   CreateDateColumn,
   UpdateDateColumn,
   JoinColumn,
 } from "typeorm";
-import { User } from "../User/entity";
 
-@Entity("articletest")
+import User  from "../User/entity";
+
+@Entity("article")
 export class Article extends BaseEntity {
   @PrimaryGeneratedColumn()
   article_id: number;
@@ -66,7 +66,6 @@ export class Article extends BaseEntity {
     name: "admin_id",
   })
   author: User;
-  //Not null
 
   @CreateDateColumn()
   created_at: Date;

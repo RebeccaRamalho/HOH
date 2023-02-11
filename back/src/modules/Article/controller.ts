@@ -8,11 +8,10 @@ import {
   Delete,
 } from "@overnightjs/core";
 import JwtService from "../../libs/jwt";
-import { auth } from "../../config/middlewares";
+import { auth } from "../../middlewares";
 import ArticleDTO from "./dto";
 import { IArticleService } from "../../helpers/interfaces/article.interfaces";
 
-//RÔLE: porte d'entrée/donne accès aux réponses
 @Controller("api")
 class ArticleController {
   private articleService;

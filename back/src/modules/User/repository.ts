@@ -1,6 +1,6 @@
 import { EntityRepository, EntityManager } from "typeorm";
 import bcrypt from "bcrypt";
-import { User } from "./entity";
+import User  from "./entity";
 import { IUserRepository } from "../../helpers/interfaces/user.interfaces";
 import { user } from "../../helpers/types/user.types";
 

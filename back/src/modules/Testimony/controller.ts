@@ -8,7 +8,7 @@ import {
   Delete,
 } from "@overnightjs/core";
 import JwtService from "../../libs/jwt";
-import { auth } from "../../config/middlewares";
+import { auth } from "../../middlewares";
 import TestimonyDTO from "./dto";
 import { ITestimonyService } from "../../helpers/interfaces/testimony.interfaces";
 

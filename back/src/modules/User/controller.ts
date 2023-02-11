@@ -8,7 +8,7 @@ import {
   Delete,
 } from "@overnightjs/core";
 import JwtService from "../../libs/jwt";
-import { auth } from "../../config/middlewares";
+import { auth } from "../../middlewares";
 import UserDTO from "./dto";
 import { IUserService } from "../../helpers/interfaces/user.interfaces";
 

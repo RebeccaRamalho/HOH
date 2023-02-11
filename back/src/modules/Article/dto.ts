@@ -1,6 +1,6 @@
-import { User } from "../User/entity";
+import  User  from "../User/entity";
 import UserDTO from "../User/dto";
-import { auth } from "../../config/middlewares";
+import { auth } from "../../middlewares";
 
 class ArticleDTO {
   article_id;

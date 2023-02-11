@@ -1,8 +1,14 @@
 @cookie = "auth-cookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODUsImlhdCI6MTY2Mzc1NzI2Nn0.m7dt_tOPKTIkC2LttCqqWa9Sh9h9opn8lusx5o4aLek; Path=/; Domain=localhost; Expires=Fri, 21 Oct 2022 10:47:46 GMT"
 @testimony_id = 9
 @id = 50
+
+### Routes Public #######
+GET http://localhost:4000/api/allArticles
+
+###
 POST http://localhost:4000/api/adminRegister/
 Content-Type: application/json
+
 {
 
    "user_name": "Amélia",
@@ -57,7 +63,3 @@ Cookie: {{cookie}}
 ###
 GET http://localhost:4000/api/derniersArticles
 
-###
-GET http://localhost:4000/api/allArticles
-
-###

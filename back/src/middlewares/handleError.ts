@@ -1,4 +1,4 @@
-import ApiError from "../../helpers/error";
+import ApiError from "../helpers/error";
 import { logger } from "./index";
 import { NextFunction } from "express";
 import { Response, Request } from "express";

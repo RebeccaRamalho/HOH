@@ -1,25 +1,18 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  BaseEntity,
-  CreateDateColumn,
-  UpdateDateColumn,
-  OneToMany,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn, UpdateDateColumn, OneToMany } from "typeorm";
+
 import { Article } from "../Article/entity";
 import { Testimony } from "../Testimony/entity";
 
-@Entity("usertest")
-export class User extends BaseEntity {
+@Entity("User")
+export  default class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   admin_id: number;
 
   @Column({
-    default: null,
+ default: null,
     nullable: true,
     length: 45,
-    // unique: true,
+    unique: true,
   })
   user_name: string;
 
@@ -38,15 +31,15 @@ export class User extends BaseEntity {
   })
   password: string;
 
-  @OneToMany(() => Article, (article) => article.author)
-  articles: Article[];
-
-  @OneToMany(() => Testimony, (testimony) => testimony.author)
-  testimonies: Testimony[];
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => Article, (article) => article.author)
+  articles: Article[];
+
+  @OneToMany(() => Testimony, (testimony) => testimony.author)
+  testimonies: Testimony[];
 }

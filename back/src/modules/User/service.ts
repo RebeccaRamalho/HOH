@@ -1,6 +1,6 @@
 import ApiError from "../../helpers/error";
 import { IMailerService } from "../../libs/mailer";
-import { User } from "./entity";
+import  User  from "./entity";
 import { user } from "../../helpers/types/user.types";
 import {
   IUserService,

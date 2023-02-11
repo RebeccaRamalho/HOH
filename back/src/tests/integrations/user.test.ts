@@ -2,7 +2,7 @@ import request from "supertest";
 import database from "../../config/database";
 import App from "../../config/server";
 import routes from "../../modules";
-import middlewares from "../../config/middlewares";
+import middlewares from "../../middlewares";
 
 let server = new App(routes, middlewares);
 
