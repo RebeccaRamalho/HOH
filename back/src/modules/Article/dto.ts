@@ -1,9 +1,9 @@
-import  User  from "../User/entity";
+import User from "../User/entity";
 import UserDTO from "../User/dto";
 import { auth } from "../../middlewares";
 
 class ArticleDTO {
-  article_id;
+  id;
   title;
   img;
   resume_article;
@@ -13,7 +13,7 @@ class ArticleDTO {
   admin_id;
 
   constructor({
-    article_id,
+    id,
     title,
     img,
     resume_article,
@@ -22,7 +22,7 @@ class ArticleDTO {
     video,
     admin_id = [],
   }: {
-    article_id: number;
+    id: string;
     title: string;
     img: string;
     resume_article: string;
@@ -31,7 +31,7 @@ class ArticleDTO {
     video: string;
     admin_id?: User[];
   }) {
-    this.article_id = article_id;
+    this.id = id;
     this.title = title;
     this.img = img;
     this.resume_article = resume_article;

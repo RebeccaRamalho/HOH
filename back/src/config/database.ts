@@ -1,4 +1,7 @@
 import { ConnectionOptions, getConnectionManager } from "typeorm";
+import { Article } from "../modules/Article/entity";
+import { Testimony } from "../modules/Testimony/entity";
+import User from "../modules/User/entity";
 import config from "./env";
 
 const options: ConnectionOptions = {
@@ -10,7 +13,8 @@ const options: ConnectionOptions = {
   database: config.db_name,
   multipleStatements: true,
   synchronize: true,
-  entities: [__dirname + "/../../modules/**/entity.{js,ts}"],
+  logger: "advanced-console",
+  entities: [User, Article, Testimony],
   migrations: ["src/config/database/migration/*.ts"]
 };
 

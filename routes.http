@@ -27,7 +27,6 @@ Content-Type: application/json
 }
 ############################TESTIMONY#######################################################################
 POST http://localhost:4000/api/votrePetitMot
-Cookie: {{cookie}}
 Content-Type: application/json
 
 {
@@ -39,18 +38,16 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4000/api/derniersPetitMots
-Cookie: {{cookie}}
 
 ############################ARTICLE#########################################
 POST http://localhost:4000/api/articles
-Cookie: {{cookie}}
 Content-Type: application/json
 
 {
-        "title": "Bonjour monsieur LE MOCHE",
+        "title": "title1",
         "img": "img.PNG",
         "resume_article": "resume",
-        "content_article": "",
+        "content_article": "gdhtyjrtjjtrtyrt",
         "author_article": "Maryse",
         "video": "kkkkk",
         "admin_id": 2

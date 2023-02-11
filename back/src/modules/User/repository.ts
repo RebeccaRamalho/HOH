@@ -1,13 +1,13 @@
 import { EntityRepository, EntityManager } from "typeorm";
 import bcrypt from "bcrypt";
-import User  from "./entity";
+import User from "./entity";
 import { IUserRepository } from "../../helpers/interfaces/user.interfaces";
 import { user } from "../../helpers/types/user.types";
 
-//ROLE => MODEL, REQUÊTES
+
 @EntityRepository()
 class UserRepository implements IUserRepository {
-  constructor(private manager: EntityManager) {}
+  constructor(private manager: EntityManager) { }
 
   async findAll() {
     return await this.manager.find(User);
@@ -19,7 +19,7 @@ class UserRepository implements IUserRepository {
     return await this.manager.save(User, userEntity);
   }
 
-  async findUser(userEntity: user){
+  async findUser(userEntity: user) {
     return await this.manager.findOne(User, { email: userEntity.email });
   }
 
@@ -33,5 +33,3 @@ class UserRepository implements IUserRepository {
 
 export default UserRepository;
 
-//NOTES
-//EntityManager is similar to Repository and used to manage database operations such as insert, update, delete and load data. While Repository handles single entity, EntityManager is common to all entities and able to do operations on all entities.

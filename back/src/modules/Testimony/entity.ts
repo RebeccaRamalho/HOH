@@ -7,15 +7,20 @@ import {
   JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  Generated,
+  JoinTable,
+  PrimaryColumn,
 } from "typeorm";
 import  User  from "../User/entity";
 
-@Entity("testimonytest")
+@Entity("testimony")
 export class Testimony extends BaseEntity{
-    @PrimaryGeneratedColumn()
-    id: number;     
+    @JoinTable()
+    @PrimaryColumn({ type: "uuid", unique: true })
+    @Generated("uuid") id: string;  
     
     @Column({
+        type:'varchar',
         default: null,
         nullable: false,
         length: 45,

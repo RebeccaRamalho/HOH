@@ -21,13 +21,13 @@ class ArticleController {
     this.jwtService = jwtService;
   }
   @Post("articles")
-  @Middleware(auth.isAuth)
   add = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const article = await this.articleService.add({ ...req.body });
       res.status(201).json(new ArticleDTO(article));
     } catch (err) {
       next(err);
+      console.log(err);
     }
   };
 
@@ -44,11 +44,9 @@ class ArticleController {
   };
 
   @Get("derniersArticles")
-  @Middleware(auth.isAuth)
   getLastOne = async (req: Request, res: Response, next: NextFunction) => {
     try {
       let article = await this.articleService.getLastOne();
-      //ERREUR manque l'appel au DTO
       res.status(200).json(article);
     } catch (err) {
       next(err);

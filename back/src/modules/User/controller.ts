@@ -8,7 +8,6 @@ import {
   Delete,
 } from "@overnightjs/core";
 import JwtService from "../../libs/jwt";
-import { auth } from "../../middlewares";
 import UserDTO from "./dto";
 import { IUserService } from "../../helpers/interfaces/user.interfaces";
 
@@ -68,37 +67,3 @@ class UserController {
   };
 }
 export default UserController;
-
-// Admin_routes
-
-//   /*CREATE*/
-//   .post("/api/adminRegister", adminController.signUp)
-//   .post("/api/adminlogin", adminController.login)
-//   .post("/api/article", isAuth, adminController.publishArticles)
-//   /*READ*/
-//   .post("/api/votrePetitMot", isAuth, adminController.getReview)
-//   .post("/api/articles", isAuth, adminController.getArticles)
-//   .post(
-//     "/api/adminArticleDetails/:article_id", isAuth,
-//     adminController.articleDetails
-//   )
-//   .post("/api/votrePetitMot/:id", isAuth, adminController.getOneReview)//
-
-//   /*UPDATE*/
-//   .put("/api/article/:article_id", isAuth, adminController.updateArticles)
-
-//   /*DELETE*/
-//   .delete("/api/article/:article_id", isAuth, adminController.deleteArticles)
-//   .delete("/api/votrePetitMot/:id", isAuth, adminController.deleteReview); //ok!
-//   .delete("/api/votrePetitMot/:id", isAuth, adminController.deleteReview); //L
-
-//Visiteur_routes
-
-//   /*CREATE*/
-//   .post("/api/votrePetitMot", controller.postReview)
-
-//   /*READ*/
-//   .get("/api/derniersArticles", controller.getLastArticles) //ok back and front!
-//   .get("/api/derniersPetitMots", controller.get3Reviews) //ok back and front
-//   .get("/api/allArticles", controller.getArticles) //ok!
-//   .get("/api/visitorArticle/:article_id", controller.articleDetails); //ok

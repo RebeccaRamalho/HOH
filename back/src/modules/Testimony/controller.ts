@@ -22,7 +22,6 @@ class TestimonyController {
   }
 
   @Post("votrePetitMot")
-  @Middleware(auth.isAuth)
   add = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const testimony = await this.testimonyService.add({ ...req.body });
@@ -33,7 +32,6 @@ class TestimonyController {
   };
 
   @Get("derniersPetitMots")
-  @Middleware(auth.isAuth)
   get3LastTestimony = async (
     req: Request,
     res: Response,

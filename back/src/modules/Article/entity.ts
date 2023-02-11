@@ -1,24 +1,17 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  BaseEntity,
-  ManyToOne,
-  CreateDateColumn,
-  UpdateDateColumn,
-  JoinColumn,
-} from "typeorm";
+import { Entity, Column, BaseEntity, PrimaryColumn, Generated, JoinTable, ManyToMany, ManyToOne, CreateDateColumn, JoinColumn, UpdateDateColumn } from "typeorm";
+
 
 import User  from "../User/entity";
 
-@Entity("article")
+@Entity()
 export class Article extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  article_id: number;
+  @JoinTable()
+  @PrimaryColumn({ type: "uuid", unique: true })
+  @Generated("uuid") id: string;
 
   @Column({
+    type:'varchar',
     default: null,
-    nullable: false,
     length: 45,
   })
   title: string;
@@ -26,17 +19,7 @@ export class Article extends BaseEntity {
   @Column("longtext")
   img: string;
 
-  // @Column({
-  //   default: null,
-  //   nullable: false,
-  //   length: 25,
-  // })
-  // tags: string;
-
   @Column({
-    default: null,
-    nullable: false,
-    length: 85,
   })
   resume_article: string;
 
@@ -48,9 +31,6 @@ export class Article extends BaseEntity {
   content_article: string;
 
   @Column({
-    default: null,
-    nullable: false,
-    length: 45,
   })
   author_article: string;
 

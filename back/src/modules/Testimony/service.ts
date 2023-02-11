@@ -19,7 +19,10 @@ export default class TestimonyService implements ITestimonyService {
     this.mailerService = mailerService;
   }
   async add(testimonyEntity: Testimony) {
+
     const newTestimony = await this.testimonyRepo.addNew(testimonyEntity);
+    console.log(newTestimony, "newTestimony");
+    
     return newTestimony;
   }
   async get3LastTestimony() {

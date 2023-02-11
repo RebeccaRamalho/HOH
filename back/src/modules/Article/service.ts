@@ -24,13 +24,9 @@ export default class ArticleService implements IArticleService {
       "^[a-zA-Z0-9]+.{1}(png|PNG|jpg|JPG|jpeg|JPEG|gif|GIF|bpm|BPM)$",
       "m"
     );
-    //IMG
-    // if (!imgRegex.test(articleData.img)) {
-    //   throw new ApiError(400, "L'image n'est pas au bon format.");
-    // } else
     if (
-      !articleData.author_article ||
-      !articleData.content_article ||
+      !articleData["author_article"] ||
+      !articleData['content_article'] ||
       !articleData.resume_article ||
       !articleData.title
     ) {

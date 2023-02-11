@@ -3,10 +3,10 @@ import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn, U
 import { Article } from "../Article/entity";
 import { Testimony } from "../Testimony/entity";
 
-@Entity("User")
+@Entity()
 export  default class User extends BaseEntity {
   @PrimaryGeneratedColumn()
-  admin_id: number;
+  admin_id: boolean;
 
   @Column({
  default: null,
