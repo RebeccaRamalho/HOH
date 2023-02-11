@@ -6,7 +6,7 @@ For run app :
 
 or
 
--  use cd back npm run go 
+-  use `cd back && npm run go` 
 
 Don't forget : 
 - 1. install dependencies with `npm i`
