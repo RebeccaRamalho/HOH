@@ -1,0 +1,63 @@
+@cookie = "auth-cookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODUsImlhdCI6MTY2Mzc1NzI2Nn0.m7dt_tOPKTIkC2LttCqqWa9Sh9h9opn8lusx5o4aLek; Path=/; Domain=localhost; Expires=Fri, 21 Oct 2022 10:47:46 GMT"
+@testimony_id = 9
+@id = 50
+POST http://localhost:4000/api/adminRegister/
+Content-Type: application/json
+{
+
+   "user_name": "Amélia",
+   "email": "kldlsdddddllfnxxkjk@dkkgmail.com",
+   "password": "ddddddM0dMd"
+
+}
+####
+POST http://localhost:4000/api/adminlogin
+Content-Type: application/json
+
+{
+   "user_name": "Amoulou",
+   "email": "ameliakanu@jmail.com",
+   "password": "kkkA.100000"
+}
+############################TESTIMONY#######################################################################
+POST http://localhost:4000/api/votrePetitMot
+Cookie: {{cookie}}
+Content-Type: application/json
+
+{
+   "last_name": "Kanu",
+   "first_name": "Amélia",
+   "opinion": "Cette association est extraordinaire!!",
+   "role": "contributeur"
+}
+
+###
+GET http://localhost:4000/api/derniersPetitMots
+Cookie: {{cookie}}
+
+############################ARTICLE#########################################
+POST http://localhost:4000/api/articles
+Cookie: {{cookie}}
+Content-Type: application/json
+
+{
+        "title": "Bonjour monsieur LE MOCHE",
+        "img": "img.PNG",
+        "resume_article": "resume",
+        "content_article": "",
+        "author_article": "Maryse",
+        "video": "kkkkk",
+        "admin_id": 2
+}
+
+###
+GET http://localhost:4000/api/articles
+Cookie: {{cookie}}
+
+###
+GET http://localhost:4000/api/derniersArticles
+
+###
+GET http://localhost:4000/api/allArticles
+
+###

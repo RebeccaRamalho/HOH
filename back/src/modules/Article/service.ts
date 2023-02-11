@@ -6,7 +6,7 @@ import {
   IArticleService,
   IArticleRepository,
 } from "../../helpers/interfaces/article.interfaces";
-import ArticleRepository from "../Article/repository";
+import ArticleRepository from "./repository";
 
 export default class ArticleService implements IArticleService {
   private articleRepo;
