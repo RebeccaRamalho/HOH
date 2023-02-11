@@ -13,3 +13,7 @@ Don't forget :
 - 2. use .env.exemple for create and assign your .env
 - 3. create mysql database for HoH application 
 - 4. enjoy! :boom:
+
+### Start MCD
+
+<img src= "/screnshot/MCD_hand_of_hope.png" alt="screnshot schema MCD" />
