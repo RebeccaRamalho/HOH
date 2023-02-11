@@ -1,5 +1,8 @@
 For run app :
--  use cd front && npm run start && cd back && npm run start 
+-  open terminal and write cd frontJS 
+-  npm run start
+- open other terminal window and write cd back 
+-  npm run start 
 
 or
 
